@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD552177D4F10056D396 /* AppDelegate.swift */; };
-		D471BD582177D4F10056D396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD572177D4F10056D396 /* ViewController.swift */; };
+		D471BD582177D4F10056D396 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD572177D4F10056D396 /* MainViewController.swift */; };
 		D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD592177D4F10056D396 /* Main.storyboard */; };
 		D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */; };
 		D471BD602177D4F30056D396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D471BD5F2177D4F30056D396 /* Assets.xcassets */; };
 		D471BD632177D4F30056D396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD612177D4F30056D396 /* LaunchScreen.storyboard */; };
+		D471BD6B2177F1A80056D396 /* BtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD6A2177F1A80056D396 /* BtcViewController.swift */; };
+		D471BD6D2177F2B40056D396 /* EthereumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD6C2177F2B40056D396 /* EthereumViewController.swift */; };
+		D471BD6F2177F9280056D396 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD6E2177F9280056D396 /* Questions.swift */; };
+		D471BD72217800140056D396 /* QuestionBank .swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD71217800140056D396 /* QuestionBank .swift */; };
+		D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D471BD522177D4F10056D396 /* CryptoKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471BD552177D4F10056D396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D471BD572177D4F10056D396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D471BD572177D4F10056D396 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D471BD5A2177D4F10056D396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D471BD5D2177D4F10056D396 /* CryptoKnowledge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoKnowledge.xcdatamodel; sourceTree = "<group>"; };
 		D471BD5F2177D4F30056D396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D471BD622177D4F30056D396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D471BD642177D4F30056D396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D471BD6A2177F1A80056D396 /* BtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtcViewController.swift; sourceTree = "<group>"; };
+		D471BD6C2177F2B40056D396 /* EthereumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumViewController.swift; sourceTree = "<group>"; };
+		D471BD6E2177F9280056D396 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		D471BD71217800140056D396 /* QuestionBank .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionBank .swift"; sourceTree = "<group>"; };
+		D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ethereumQuestionBank.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,28 @@
 		D471BD542177D4F10056D396 /* CryptoKnowledge */ = {
 			isa = PBXGroup;
 			children = (
-				D471BD552177D4F10056D396 /* AppDelegate.swift */,
-				D471BD572177D4F10056D396 /* ViewController.swift */,
+				D471BD702177FFA60056D396 /* Controllers */,
 				D471BD592177D4F10056D396 /* Main.storyboard */,
+				D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */,
+				D471BD6E2177F9280056D396 /* Questions.swift */,
+				D471BD71217800140056D396 /* QuestionBank .swift */,
 				D471BD5F2177D4F30056D396 /* Assets.xcassets */,
 				D471BD612177D4F30056D396 /* LaunchScreen.storyboard */,
 				D471BD642177D4F30056D396 /* Info.plist */,
 				D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */,
 			);
 			path = CryptoKnowledge;
+			sourceTree = "<group>";
+		};
+		D471BD702177FFA60056D396 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D471BD552177D4F10056D396 /* AppDelegate.swift */,
+				D471BD572177D4F10056D396 /* MainViewController.swift */,
+				D471BD6A2177F1A80056D396 /* BtcViewController.swift */,
+				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D471BD582177D4F10056D396 /* ViewController.swift in Sources */,
+				D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */,
+				D471BD582177D4F10056D396 /* MainViewController.swift in Sources */,
+				D471BD6D2177F2B40056D396 /* EthereumViewController.swift in Sources */,
+				D471BD72217800140056D396 /* QuestionBank .swift in Sources */,
 				D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */,
+				D471BD6F2177F9280056D396 /* Questions.swift in Sources */,
+				D471BD6B2177F1A80056D396 /* BtcViewController.swift in Sources */,
 				D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
