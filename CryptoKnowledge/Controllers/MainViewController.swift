@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     
         // Do any additional setup after loading the view, typically from a nib.
-    bitcoinButton.layer.cornerRadius = 5
+    bitcoinButton.layer.cornerRadius = 8
     bitcoinButton.layer.borderWidth = 1
     bitcoinButton.layer.borderColor = UIColor.black.cgColor
 //    bitcoinButton.layer.backgroundColor = UIColor.gray.cgColor
@@ -28,8 +28,9 @@ class MainViewController: UIViewController {
     ethereumButton.layer.borderWidth = 1
     ethereumButton.layer.borderColor = UIColor.black.cgColor
 //    ethereumButton.layer.backgroundColor = UIColor.gray.cgColor
-        
-    
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
+        let myDatabase = FIRDatabase.database().reference()
+        myDatabase.setValue("We got data!") 
         return true
     }
 
@@ -89,5 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
+    
 }
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84568EA030EE3E245BEAEBBF /* Pods_CryptoKnowledge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E594F379DBD2E936028785 /* Pods_CryptoKnowledge.framework */; };
+		D41A799A217E4CEA003F073A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A7999217E4CEA003F073A /* RegistrationViewController.swift */; };
+		D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1CE217994A2006E1D64 /* LogInViewController.swift */; };
+		D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */; };
+		D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */; };
 		D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD552177D4F10056D396 /* AppDelegate.swift */; };
 		D471BD582177D4F10056D396 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD572177D4F10056D396 /* MainViewController.swift */; };
 		D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD592177D4F10056D396 /* Main.storyboard */; };
@@ -21,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		498DFEF98D5CBDC819B51077 /* Pods-CryptoKnowledge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoKnowledge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoKnowledge/Pods-CryptoKnowledge.release.xcconfig"; sourceTree = "<group>"; };
+		77E594F379DBD2E936028785 /* Pods_CryptoKnowledge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoKnowledge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		990A45A9A3F81BF12F541DA0 /* Pods-CryptoKnowledge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoKnowledge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoKnowledge/Pods-CryptoKnowledge.debug.xcconfig"; sourceTree = "<group>"; };
+		D41A7999217E4CEA003F073A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		D45DA1CE217994A2006E1D64 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D471BD522177D4F10056D396 /* CryptoKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471BD552177D4F10056D396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D471BD572177D4F10056D396 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -41,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84568EA030EE3E245BEAEBBF /* Pods_CryptoKnowledge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1844C5F3809875AC8B6EAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77E594F379DBD2E936028785 /* Pods_CryptoKnowledge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7384F04470C0BC77CA36E166 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				990A45A9A3F81BF12F541DA0 /* Pods-CryptoKnowledge.debug.xcconfig */,
+				498DFEF98D5CBDC819B51077 /* Pods-CryptoKnowledge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D471BD492177D4F10056D396 = {
 			isa = PBXGroup;
 			children = (
 				D471BD542177D4F10056D396 /* CryptoKnowledge */,
 				D471BD532177D4F10056D396 /* Products */,
+				7384F04470C0BC77CA36E166 /* Pods */,
+				2D1844C5F3809875AC8B6EAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +106,7 @@
 				D471BD5F2177D4F30056D396 /* Assets.xcassets */,
 				D471BD612177D4F30056D396 /* LaunchScreen.storyboard */,
 				D471BD642177D4F30056D396 /* Info.plist */,
+				D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */,
 				D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */,
 			);
 			path = CryptoKnowledge;
@@ -83,9 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				D471BD552177D4F10056D396 /* AppDelegate.swift */,
+				D45DA1CE217994A2006E1D64 /* LogInViewController.swift */,
 				D471BD572177D4F10056D396 /* MainViewController.swift */,
 				D471BD6A2177F1A80056D396 /* BtcViewController.swift */,
 				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
+				D41A7999217E4CEA003F073A /* RegistrationViewController.swift */,
+				D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -97,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D471BD672177D4F30056D396 /* Build configuration list for PBXNativeTarget "CryptoKnowledge" */;
 			buildPhases = (
+				AC5249BA0CAA8A0899685CEF /* [CP] Check Pods Manifest.lock */,
 				D471BD4E2177D4F10056D396 /* Sources */,
 				D471BD4F2177D4F10056D396 /* Frameworks */,
 				D471BD502177D4F10056D396 /* Resources */,
+				9888DA81A980164A70B87F46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D471BD632177D4F30056D396 /* LaunchScreen.storyboard in Resources */,
+				D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */,
 				D471BD602177D4F30056D396 /* Assets.xcassets in Resources */,
 				D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */,
 			);
@@ -156,13 +195,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9888DA81A980164A70B87F46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoKnowledge/Pods-CryptoKnowledge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoKnowledge/Pods-CryptoKnowledge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC5249BA0CAA8A0899685CEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoKnowledge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D471BD4E2177D4F10056D396 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */,
 				D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */,
 				D471BD582177D4F10056D396 /* MainViewController.swift in Sources */,
+				D41A799A217E4CEA003F073A /* RegistrationViewController.swift in Sources */,
+				D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */,
 				D471BD6D2177F2B40056D396 /* EthereumViewController.swift in Sources */,
 				D471BD72217800140056D396 /* QuestionBank .swift in Sources */,
 				D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */,
@@ -312,6 +403,7 @@
 		};
 		D471BD682177D4F30056D396 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990A45A9A3F81BF12F541DA0 /* Pods-CryptoKnowledge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,6 +422,7 @@
 		};
 		D471BD692177D4F30056D396 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498DFEF98D5CBDC819B51077 /* Pods-CryptoKnowledge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

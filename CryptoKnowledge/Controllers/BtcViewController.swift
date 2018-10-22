@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BtcViewController: UIViewController {
+class BtcViewController: UIViewController{
     
     let questionList = QuestionBank()
     var questionNumber : Int = 0
