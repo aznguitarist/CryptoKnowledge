@@ -117,10 +117,10 @@
 			children = (
 				D471BD552177D4F10056D396 /* AppDelegate.swift */,
 				D45DA1CE217994A2006E1D64 /* LogInViewController.swift */,
+				D41A7999217E4CEA003F073A /* RegistrationViewController.swift */,
 				D471BD572177D4F10056D396 /* MainViewController.swift */,
 				D471BD6A2177F1A80056D396 /* BtcViewController.swift */,
 				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
-				D41A7999217E4CEA003F073A /* RegistrationViewController.swift */,
 				D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */,
 			);
 			path = Controllers;
@@ -205,15 +205,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoKnowledge/Pods-CryptoKnowledge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
