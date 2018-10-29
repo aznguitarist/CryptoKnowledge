@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BtcViewController: UIViewController{
+class BtcViewController: UIViewController  {
     
     let questionList = QuestionBank()
     var questionNumber : Int = 0
@@ -31,24 +31,29 @@ class BtcViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         updateData()
 //        questionTextField.layer.borderColor = UIColor.black.cgColor
 //        questionTextField.layer.borderWidth = 2
 
+//        self.applyRoundCorners(choiceOne)
         choiceOne.layer.borderColor = UIColor.black.cgColor
         choiceOne.layer.borderWidth = 0.5
-        choiceOne.layer.cornerRadius = 10
+        choiceOne.layer.cornerRadius = 20
+        
         
         choiceTwo.layer.borderColor = UIColor.black.cgColor
         choiceTwo.layer.borderWidth = 0.5
-        choiceTwo.layer.cornerRadius = 10
+        choiceTwo.layer.cornerRadius = 20
         
         choiceThree.layer.borderColor = UIColor.black.cgColor
         choiceThree.layer.borderWidth = 0.5
-        choiceThree.layer.cornerRadius = 10
+        choiceThree.layer.cornerRadius = 20 
         
     }
     
+    
+ 
     
     @IBAction func answerPressed(_ sender: AnyObject) {
         if sender.tag == 1{
@@ -72,7 +77,7 @@ class BtcViewController: UIViewController{
     func checkAnswer() {
         let correctAnswer = questionList.questionBank[questionNumber].answer
         if pickedAnswer == correctAnswer {
-            qScore += 1
+            qScore += 100
             print("correctAnswer")
             }
         else {
@@ -82,19 +87,18 @@ class BtcViewController: UIViewController{
   
     func updateData() {
          let nextQuest = questionList.questionBank[questionNumber]
-        questionNumberLabel.text = " Question \(questionNumber + 1)/ 5"
+        questionNumberLabel.text = " Question \(questionNumber + 1)/ 15"
         scoreLabel.text = "Score: \(qScore)"
         questionTextField.text = nextQuest.question
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
-        progressBar.frame.size.width = (view.frame.size.width/5) * CGFloat(questionNumber + 1)
-   
+        progressBar.frame.size.width = (view.frame.size.width/15) * CGFloat(questionNumber + 1)
     }
     
     func nextQuestion() {
 
-        if questionNumber <= 4 {
+        if questionNumber <= 14 {
             updateData()
             
         }else {
@@ -112,6 +116,11 @@ class BtcViewController: UIViewController{
         questionNumber = 0
         qScore = 0
         nextQuestion()
+    }
+    
+    func applyRoundCorners(_ Object: AnyObject){
+        Object.layer.cornerRadius = Object.frame.size.width / 2
+        Object.layer.masksToBounds = true
     }
     
     }

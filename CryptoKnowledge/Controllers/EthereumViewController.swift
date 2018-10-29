@@ -23,6 +23,7 @@ class EthereumViewController: UIViewController {
     @IBOutlet weak var choiceThree: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var questionNum: UILabel!
     
     
     override func viewDidLoad() {
@@ -71,12 +72,13 @@ class EthereumViewController: UIViewController {
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
-        progressBar.frame.size.width = (view.frame.size.width/3) * CGFloat(questionNumber + 1)
+        questionNum.text = "Question: \(questionNumber + 1)/10"
+        progressBar.frame.size.width = (view.frame.size.width/10) * CGFloat(questionNumber + 1)
     }
     
     
     func nextQuestion() {
-        if questionNumber <= 2 {
+        if questionNumber <= 9 {
             
             updateData()
             

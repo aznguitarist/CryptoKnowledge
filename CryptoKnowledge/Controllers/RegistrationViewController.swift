@@ -61,5 +61,13 @@ class RegistrationViewController: UIViewController {
         }
         present(mainRegistrationVC, animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textfield: UITextField) -> Bool {
+        textfield.resignFirstResponder()
+        return(true)
+    }
  
 }

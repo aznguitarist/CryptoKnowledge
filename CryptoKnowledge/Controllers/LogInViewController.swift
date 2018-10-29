@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,8 +20,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTextField.placeholder = "UserName: "
-        passwordTextField.placeholder = "Password: "
+        userNameTextField.placeholder = "Email Addres"
+        passwordTextField.placeholder = "Password "
+        
+        self.userNameTextField.delegate = self 
+        self.passwordTextField.delegate = self
     }
     
     
@@ -63,5 +66,14 @@ class LoginViewController: UIViewController {
         }
         present(mainRegistrationVC, animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textfield: UITextField) -> Bool {
+        textfield.resignFirstResponder()
+        return(true)
+    }
+    
     
 }
