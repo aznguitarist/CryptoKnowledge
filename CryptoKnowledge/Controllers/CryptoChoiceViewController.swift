@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CryptoChoiceViewController: UIViewController {
+class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var coins: [Coins] = []
+    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum"]
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,27 +31,25 @@ class CryptoChoiceViewController: UIViewController {
     func createArray() -> [Coins] {
         var tempCoins: [Coins] = []
         
-        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz")
-        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin")
-        let coin3 = Coins(image: UIImage(named: "Ethereum")!, name: "Ethereum")
-        let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple") 
-        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
-        
+        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz", controller: "CryptoViewController")
+        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", controller: "BtcViewController")
+        let coin3 = Coins(image: UIImage(named: "Ethereum")!, name: "Ethereum", controller: "EthereumViewController")
+//        let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", controller: "RippleViewContro )
+//        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
+//
         tempCoins.append(coin1)
         tempCoins.append(coin2)
         tempCoins.append(coin3)
-        tempCoins.append(coin4)
-        tempCoins.append(coin5)
+//        tempCoins.append(coin4)
+//        tempCoins.append(coin5)
         
         
         return tempCoins
     }
     
 
-}
 
-
-extension CryptoChoiceViewController: UITableViewDataSource, UITableViewDelegate{
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count
     }
@@ -63,8 +62,12 @@ extension CryptoChoiceViewController: UITableViewDataSource, UITableViewDelegate
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)    }
+ 
 
 }
+
 
 
 

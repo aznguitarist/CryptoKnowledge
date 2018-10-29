@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664.79999999999995" y="791.15442278860576"/>
+            <point key="canvasLocation" x="731" y="552"/>
         </scene>
         <!--Crypto View Controller-->
         <scene sceneID="rWW-JE-bVm">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Neu-S1-5fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496.8" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="2374" y="-303"/>
         </scene>
         <!--Btc View Controller-->
         <scene sceneID="ezg-4o-TnX">
@@ -271,7 +271,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="Insert Question" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-lr-vnh">
-                                <rect key="frame" x="15" y="74" width="290" height="167.5"/>
+                                <rect key="frame" x="15" y="30" width="290" height="211.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
                             </textView>
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol7-Yp-Gcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537.5" y="591.25"/>
+            <point key="canvasLocation" x="2374" y="618"/>
         </scene>
         <!--Crypto Choice View Controller-->
         <scene sceneID="C0z-5y-JRw">
@@ -361,6 +361,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MuE-gN-WeO" id="AOy-QE-fx1"/>
+                                    <outlet property="delegate" destination="MuE-gN-WeO" id="qyg-0J-hkl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -374,11 +378,14 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="RLV-fq-SZs" id="FrM-iN-6Io"/>
+                        <segue destination="ElA-Bj-mQH" kind="show" identifier="cryptoquiz" id="hk1-VV-CsO"/>
+                        <segue destination="LD0-Qx-nDc" kind="show" identifier="bitcoinquiz" id="Nmk-vS-BVn"/>
+                        <segue destination="hJF-eV-D9C" kind="show" identifier="ethereum" id="DRC-VH-l0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGR-cp-Hgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682.5" y="1514.7887323943662"/>
+            <point key="canvasLocation" x="413" y="1563"/>
         </scene>
         <!--Ethereum View Controller-->
         <scene sceneID="lJh-ic-WNb">
@@ -392,7 +399,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" verticalHuggingPriority="240" editable="NO" text="Whats the question?" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOB-0g-sFD">
-                                <rect key="frame" x="10" y="69" width="300" height="189"/>
+                                <rect key="frame" x="10" y="25" width="300" height="233"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -504,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gq2-C8-MBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="1261.6191904047978"/>
+            <point key="canvasLocation" x="2773" y="1701"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lhn-bJ-vpQ">
@@ -626,11 +633,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="enA-yx-FCL"/>
+                        <segue destination="MuE-gN-WeO" kind="show" id="VIX-Ee-FZO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apv-gn-9tr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335.19999999999999" y="792.95352323838085"/>
+            <point key="canvasLocation" x="-549" y="618"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="jUk-uQ-GTh">
@@ -701,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asP-lv-a5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-328.80000000000001" y="1452.3238380809596"/>
+            <point key="canvasLocation" x="-549" y="1564"/>
         </scene>
     </scenes>
     <resources>
@@ -713,4 +721,9 @@
         <image name="currencies" width="960" height="470"/>
         <image name="ethereumbutt" width="216" height="360"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DRC-VH-l0X"/>
+        <segue reference="Nmk-vS-BVn"/>
+        <segue reference="hk1-VV-CsO"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,10 +12,12 @@ import UIKit
 class Coins {
     var image : UIImage
     var name : String
+    var vcControl: String
     
-    init(image: UIImage, name: String) {
+    init(image: UIImage, name: String, controller: String) {
         self.image = image
         self.name = name
+        self.vcControl = controller 
         
     }
 }

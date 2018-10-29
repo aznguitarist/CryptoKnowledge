@@ -69,7 +69,7 @@ class CryptoViewController: UIViewController {
     
     func update(){
         
-        var nextQuest = questionList.cryptoBank[questionNumber]
+        let nextQuest = questionList.cryptoBank[questionNumber]
         
         questionViewer.text = nextQuest.question
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
