@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import RealmSwift
 
 class BtcViewController: UIViewController  {
     
@@ -16,6 +18,7 @@ class BtcViewController: UIViewController  {
     var pickedAnswer : Int = 0
     var qScore : Int = 0
     
+    var ref: FIRDatabaseReference? 
     
     @IBOutlet weak var questionTextField: UITextView!
     
@@ -30,7 +33,7 @@ class BtcViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Bitcoin Quiz"
         
         updateData()
 //        questionTextField.layer.borderColor = UIColor.black.cgColor
@@ -49,6 +52,11 @@ class BtcViewController: UIViewController  {
         choiceThree.layer.borderColor = UIColor.black.cgColor
         choiceThree.layer.borderWidth = 0.5
         choiceThree.layer.cornerRadius = 20 
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
     }
     
@@ -69,10 +77,18 @@ class BtcViewController: UIViewController  {
         
         
         checkAnswer()
+        updateFirebase()
         questionNumber += 1
         nextQuestion()
     }
     
+    func updateFirebase(){
+        let ref = FIRDatabase.database().reference() 
+        guard let uid = FIRAuth.auth()?.currentUser!.uid else{
+            return}
+        
+        ref.child("Users").child(uid).child("Bitcoin Quiz").setValue(questionNumber)
+    }
     
     func checkAnswer() {
         let correctAnswer = questionList.questionBank[questionNumber].answer

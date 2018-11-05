@@ -28,6 +28,12 @@ class EthereumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Ethereum"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         updateData() 
         questionTextField.text = etherQuestions.EqBank[questionNumber].question
         choiceOne.setTitle(etherQuestions.EqBank[questionNumber].choice1, for: .normal)

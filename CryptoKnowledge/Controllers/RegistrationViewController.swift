@@ -17,6 +17,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,19 +31,34 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func registrationTapped(_ sender: AnyObject) {
         
-        FIRAuth.auth()?.createUser(withEmail: emailTextFIeld.text!, password: passwordTextField.text!, completion:
-            {(user, error) in
+        guard let email = emailTextFIeld.text, !email.isEmpty else {print("Email is empty"); return}
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            print("Password is empty"); return}
+        let ref = FIRDatabase.database().reference().root
+   
+        
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion:
+            {(user: FIRUser?, error) in
             if error != nil{
             print(error!)
-            print("There was an error")
-                
-                
             } else {
             print("Registration Successful")
-            self.goBacktoLogin()
+                guard let uid = user?.uid else{
+                    return}
+              let userReference = ref.child("Users").child(uid)
+                let values = ["Email": email]
+                userReference.updateChildValues(values, withCompletionBlock: {(err,ref) in
+                    if err != nil{
+                        print(err)
+                        return
+                    }
+                 self.goBacktoLogin()
+                
+                })
+                
                 }
             })
-
+        
         }
         
     

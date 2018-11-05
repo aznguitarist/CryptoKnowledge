@@ -7,25 +7,49 @@
 //
 
 import UIKit
+import Firebase
+
 
 class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var coins: [Coins] = []
     var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum"]
-    
+    let navItem = UINavigationItem()
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @objc func goBackToLogin() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
+            return
+        }
+        present(mainRegistrationVC, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-           coins = createArray()
+        self.title = "CryptoKnowledge"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.back, target: self, action: #selector(goBackToLogin))
+       
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(goBackToLogin))
         
+        
+           coins = createArray()
+        tableView.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        
+        tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
+        
+        tableView.reloadData()
+        
     }
     
     func createArray() -> [Coins] {

@@ -8,15 +8,19 @@
 
 import Foundation
 import UIKit
-
+import FirebaseDatabase
+import Firebase
+import RealmSwift 
+// overall cryptoquiz controller
 class CryptoViewController: UIViewController {
     
     var questionList = CryptoBank()
     var score = 0
-    var questionNumber = 0
     var pickedQuestion = 0
-    
-    
+    var userInfo: String = ""
+    let realmd = RealmData()
+    var ref: FIRDatabaseReference?
+    var questionNumber = 0
     
     @IBOutlet weak var questionViewer: UILabel!
     @IBOutlet weak var choiceOne: UIButton!
@@ -28,10 +32,17 @@ class CryptoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = FIRDatabase.database().reference()
+        self.title = "Crypto Quiz"
         
         choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
-        choiceThree.titleLabel?.textAlignment = NSTextAlignment.center 
+        choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
         view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
 //        questionViewer.text = questionList.cryptoBank[questionNumber].question
@@ -52,11 +63,21 @@ class CryptoViewController: UIViewController {
             pickedQuestion = 3
         }
         checkAnswer()
+       
+        updateFirebase()
         questionNumber += 1
         nextQuestion()
-        
+
         
     }
+    
+    func updateFirebase(){
+        let ref = FIRDatabase.database().reference()
+        guard let uid = FIRAuth.auth()?.currentUser!.uid else{
+            return}
+        ref.child("Users").child(uid).child("Cryptoquiz").setValue(questionNumber)
+    }
+    
     
     func checkAnswer(){
         let correctAnswer = questionList.cryptoBank[questionNumber].answer

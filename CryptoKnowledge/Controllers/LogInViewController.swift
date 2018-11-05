@@ -11,24 +11,25 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTextField.placeholder = "Email Addres"
-        passwordTextField.placeholder = "Password "
         
-        self.userNameTextField.delegate = self 
+        userNameTextField.placeholder = "Username"
+        passwordTextField.placeholder = "Password"
+        
+        self.userNameTextField.delegate = self
         self.passwordTextField.delegate = self
+   
     }
-    
-    
-    
     @IBAction func registerTapped(_ sender: Any) {
         navigateToRegistration()
         
@@ -36,9 +37,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func logInPressed(_ sender: Any) {
         SVProgressHUD.show()
+        guard let email = userNameTextField.text, !email.isEmpty else { print("Email is empty"); return }
+        guard let password = passwordTextField.text, !password.isEmpty else { print("Password is empty"); return}
+
         FIRAuth.auth()?.signIn(withEmail: userNameTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
             if error != nil {
                 print(error!)
+                SVProgressHUD.dismiss()
+                let alert = UIAlertView(title: "Invalid", message: "Try again", delegate: self, cancelButtonTitle: "Ok")
+                alert.show()
+
             }else{
                 SVProgressHUD.dismiss()
                 print("Login Successfull")
@@ -50,13 +58,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
+
         guard let mainNavigationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else {
             return
         }
         present(mainNavigationVC, animated: true, completion: nil)
     }
-    
+
     
     private func navigateToRegistration () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -66,6 +74,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         present(mainRegistrationVC, animated: true, completion: nil)
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

@@ -17,9 +17,9 @@ class MainNavigationController : UINavigationController {
         }
         
     func updateNavBar(){
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back It UP", style: .plain, target: nil, action: nil)
         //            guard let navBar = navigationController?.navigationBar else{
         //                Print("Fatal Error: Navigation bar doesn't exist. ")
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        navigationController?.navigationBar.shadowImage = UIImage()
 //        navigationController?.navigationBar.isTranslucent = true
     }

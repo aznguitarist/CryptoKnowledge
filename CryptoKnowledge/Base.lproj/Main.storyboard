@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MuE-gN-WeO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yqa-Z7-5ge">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,71 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="CryptoKnowledge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="bluebac" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-0h-lrV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-fA-30t">
-                                <rect key="frame" x="0.0" y="299" width="359" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="300" maxY="0.0"/>
-                                <state key="normal" title="Bitcoin" image="768px-Bitcoin.svg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="LD0-Qx-nDc" kind="show" id="qd4-ur-4MH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-wP-Fmd">
-                                <rect key="frame" x="53" y="77" width="235" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CryptoQuiz Button" backgroundImage="cryptoquiz coin">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ElA-Bj-mQH" kind="show" id="bHr-JJ-41P"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lac-m7-Uep">
-                                <rect key="frame" x="53" y="441" width="125" height="186"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" image="ethereumbutt">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hJF-eV-D9C" kind="show" id="Cc4-zb-szX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="AC2-0h-lrV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y6S-dj-Eok"/>
-                            <constraint firstItem="AC2-0h-lrV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fd4-JY-I0Y"/>
-                            <constraint firstItem="AC2-0h-lrV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="goy-7d-hXQ"/>
-                            <constraint firstItem="AC2-0h-lrV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jQC-22-2AC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qH1-Tj-x57"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="bitcoinButton" destination="ptt-fA-30t" id="hMr-Kb-03U"/>
-                        <outlet property="ethereumButton" destination="lac-m7-Uep" id="ADn-c9-hYV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="731" y="552"/>
-        </scene>
         <!--Crypto View Controller-->
         <scene sceneID="rWW-JE-bVm">
             <objects>
@@ -182,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Neu-S1-5fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374" y="-303"/>
+            <point key="canvasLocation" x="6083" y="-312"/>
         </scene>
         <!--Btc View Controller-->
         <scene sceneID="ezg-4o-TnX">
@@ -271,7 +206,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="Insert Question" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-lr-vnh">
-                                <rect key="frame" x="15" y="30" width="290" height="211.5"/>
+                                <rect key="frame" x="15" y="74" width="290" height="167.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
                             </textView>
@@ -311,18 +246,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol7-Yp-Gcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374" y="618"/>
+            <point key="canvasLocation" x="7875" y="488.02816901408454"/>
         </scene>
-        <!--Crypto Choice View Controller-->
+        <!--Title-->
         <scene sceneID="C0z-5y-JRw">
             <objects>
-                <viewController id="MuE-gN-WeO" customClass="CryptoChoiceViewController" customModule="CryptoKnowledge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CryptoChoiceViewController" id="MuE-gN-WeO" customClass="CryptoChoiceViewController" customModule="CryptoKnowledge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Apz-bV-9cu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-fq-SZs">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-fq-SZs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" id="jik-3l-chN" customClass="CryptoCellTableViewCell" customModule="CryptoKnowledge" customModuleProvider="target">
@@ -332,27 +267,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-IQ-NWi">
-                                                    <rect key="frame" x="10" y="5" width="90" height="59.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="X6Q-Ip-2ya"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-Ix-gJ4">
-                                                    <rect key="frame" x="120" y="5" width="190" height="59.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="vT8-4G-sah">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-Ix-gJ4">
+                                                            <rect key="frame" x="0.0" y="23" width="80" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-IQ-NWi">
+                                                            <rect key="frame" x="120" y="0.0" width="80" height="69.5"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-s2-WeJ">
+                                                            <rect key="frame" x="240" y="23" width="80" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="vSI-IQ-NWi" secondAttribute="bottom" constant="5" id="6qy-fb-dCQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="SOH-Ix-gJ4" secondAttribute="bottom" constant="5" id="At4-ca-02b"/>
-                                                <constraint firstAttribute="trailing" secondItem="SOH-Ix-gJ4" secondAttribute="trailing" constant="10" id="CUb-Qe-me5"/>
-                                                <constraint firstItem="SOH-Ix-gJ4" firstAttribute="top" secondItem="Ri5-Uy-XnL" secondAttribute="top" constant="5" id="KE4-mH-voa"/>
-                                                <constraint firstItem="vSI-IQ-NWi" firstAttribute="leading" secondItem="Ri5-Uy-XnL" secondAttribute="leading" constant="10" id="Mim-Ru-hOd"/>
-                                                <constraint firstItem="SOH-Ix-gJ4" firstAttribute="leading" secondItem="vSI-IQ-NWi" secondAttribute="trailing" constant="20" id="cLS-0k-58c"/>
-                                                <constraint firstItem="vSI-IQ-NWi" firstAttribute="top" secondItem="Ri5-Uy-XnL" secondAttribute="top" constant="5" id="inO-Yi-IHn"/>
+                                                <constraint firstItem="vT8-4G-sah" firstAttribute="top" secondItem="Ri5-Uy-XnL" secondAttribute="top" id="Ft3-Op-2bp"/>
+                                                <constraint firstAttribute="bottom" secondItem="vT8-4G-sah" secondAttribute="bottom" id="XlN-oO-4A9"/>
+                                                <constraint firstAttribute="trailing" secondItem="vT8-4G-sah" secondAttribute="trailing" id="Yon-Wu-K53"/>
+                                                <constraint firstItem="vT8-4G-sah" firstAttribute="leading" secondItem="Ri5-Uy-XnL" secondAttribute="leading" id="z3N-wf-gQ8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -369,23 +309,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RLV-fq-SZs" firstAttribute="leading" secondItem="3Qn-K1-bJa" secondAttribute="leading" id="FFf-eR-Dir"/>
-                            <constraint firstItem="RLV-fq-SZs" firstAttribute="trailing" secondItem="3Qn-K1-bJa" secondAttribute="trailing" id="Ldj-2R-TO4"/>
-                            <constraint firstItem="3Qn-K1-bJa" firstAttribute="bottom" secondItem="RLV-fq-SZs" secondAttribute="bottom" id="SEB-lK-8Y2"/>
-                            <constraint firstItem="RLV-fq-SZs" firstAttribute="top" secondItem="3Qn-K1-bJa" secondAttribute="top" id="j47-jO-vge"/>
+                            <constraint firstItem="RLV-fq-SZs" firstAttribute="trailing" secondItem="3Qn-K1-bJa" secondAttribute="trailing" id="4aH-2F-07p"/>
+                            <constraint firstItem="RLV-fq-SZs" firstAttribute="bottom" secondItem="3Qn-K1-bJa" secondAttribute="bottom" id="HUD-iY-Vyy"/>
+                            <constraint firstItem="RLV-fq-SZs" firstAttribute="top" secondItem="Apz-bV-9cu" secondAttribute="top" id="Htv-GC-0JB"/>
+                            <constraint firstItem="RLV-fq-SZs" firstAttribute="leading" secondItem="3Qn-K1-bJa" secondAttribute="leading" id="NNS-Ub-lF7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Qn-K1-bJa"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="pyh-FS-9nM"/>
                     <connections>
                         <outlet property="tableView" destination="RLV-fq-SZs" id="FrM-iN-6Io"/>
                         <segue destination="ElA-Bj-mQH" kind="show" identifier="cryptoquiz" id="hk1-VV-CsO"/>
-                        <segue destination="LD0-Qx-nDc" kind="show" identifier="bitcoinquiz" id="Nmk-vS-BVn"/>
+                        <segue destination="LD0-Qx-nDc" kind="show" identifier="bitcoin" id="Nmk-vS-BVn"/>
                         <segue destination="hJF-eV-D9C" kind="show" identifier="ethereum" id="DRC-VH-l0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGR-cp-Hgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413" y="1563"/>
+            <point key="canvasLocation" x="6476.25" y="489.08450704225351"/>
         </scene>
         <!--Ethereum View Controller-->
         <scene sceneID="lJh-ic-WNb">
@@ -399,7 +340,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" verticalHuggingPriority="240" editable="NO" text="Whats the question?" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOB-0g-sFD">
-                                <rect key="frame" x="10" y="25" width="300" height="233"/>
+                                <rect key="frame" x="10" y="69" width="300" height="189"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -511,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gq2-C8-MBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773" y="1701"/>
+            <point key="canvasLocation" x="4466" y="1392"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lhn-bJ-vpQ">
@@ -611,7 +552,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3z5-sW-fYy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CMv-4G-Jir"/>
                     <connections>
+                        <outlet property="logInButton" destination="reD-3S-NOb" id="cQu-d7-w2P"/>
                         <outlet property="passwordTextField" destination="tOc-Vq-tLA" id="ARw-rO-cUj"/>
                         <outlet property="registerButton" destination="zLa-Ys-6ug" id="qls-hT-P23"/>
                         <outlet property="userNameTextField" destination="JSF-X0-uEY" id="h6L-Ws-o9d"/>
@@ -619,26 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKp-jy-wun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1359.4202898550725" y="806.91964285714278"/>
-        </scene>
-        <!--Main Navigation Controller-->
-        <scene sceneID="GTE-Lb-7FN">
-            <objects>
-                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHd-cE-l9g" customClass="MainNavigationController" customModule="CryptoKnowledge" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0vD-Ff-iuK">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="enA-yx-FCL"/>
-                        <segue destination="MuE-gN-WeO" kind="show" id="VIX-Ee-FZO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Apv-gn-9tr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-549" y="618"/>
+            <point key="canvasLocation" x="3615" y="490.14084507042253"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="jUk-uQ-GTh">
@@ -709,21 +633,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asP-lv-a5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-549" y="1564"/>
+            <point key="canvasLocation" x="3471" y="1314"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="eWR-UD-QmV">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Rub-SL-Dnu" customClass="MainNavigationController" customModule="CryptoKnowledge" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SaO-cD-JQO">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MuE-gN-WeO" kind="relationship" relationship="rootViewController" id="2Oc-r8-Q3d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmu-cn-9Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5478.75" y="489.08450704225351"/>
         </scene>
     </scenes>
     <resources>
-        <image name="768px-Bitcoin.svg" width="768" height="768"/>
         <image name="blackbackground" width="1000" height="667"/>
-        <image name="bluebac" width="2500" height="1667"/>
         <image name="bold" width="275" height="183"/>
-        <image name="cryptoquiz coin" width="432" height="432"/>
         <image name="currencies" width="960" height="470"/>
-        <image name="ethereumbutt" width="216" height="360"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="DRC-VH-l0X"/>
-        <segue reference="Nmk-vS-BVn"/>
-        <segue reference="hk1-VV-CsO"/>
-    </inferredMetricsTieBreakers>
 </document>
