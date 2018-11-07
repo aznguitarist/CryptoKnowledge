@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class CryptoCellTableViewCell: UITableViewCell {
 
- 
     @IBOutlet weak var coinImageView: UIImageView!
     @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
     
     func setCoin(coin: Coins){
         coinImageView.image = coin.image
         coinLabel.text = coin.name
+        progressLabel.text = coin.progress
     }
+    
+    func fetchFireUserData(){
+        let ref = FIRDatabase.database().reference()
+        guard let uid = FIRAuth.auth()?.currentUser!.uid else {
+            return
+        }
+        
+        
+        
+        
+        }
+        
+
     
 }

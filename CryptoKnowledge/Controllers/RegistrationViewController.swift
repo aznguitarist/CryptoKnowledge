@@ -47,6 +47,7 @@ class RegistrationViewController: UIViewController {
                     return}
               let userReference = ref.child("Users").child(uid)
                 let values = ["Email": email]
+                
                 userReference.updateChildValues(values, withCompletionBlock: {(err,ref) in
                     if err != nil{
                         print(err)

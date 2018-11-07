@@ -16,26 +16,28 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum"]
     let navItem = UINavigationItem()
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     @objc func goBackToLogin() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
-            return
-        }
-        present(mainRegistrationVC, animated: true, completion: nil)
+    
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
+                return
+            }
+            present(mainRegistrationVC, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "CryptoKnowledge"
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.back, target: self, action: #selector(goBackToLogin))
        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(goBackToLogin))
         
-        
-           coins = createArray()
+        tableView.reloadData()
+        coins = createArray()
         tableView.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
         
@@ -52,27 +54,36 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+
     func createArray() -> [Coins] {
+        
+        
         var tempCoins: [Coins] = []
         
-        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz", controller: "CryptoViewController")
-        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", controller: "BtcViewController")
-        let coin3 = Coins(image: UIImage(named: "Ethereum")!, name: "Ethereum", controller: "EthereumViewController")
+        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz", progress: "1", controller: "CryptoViewController")
+        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", progress: "2", controller: "BtcViewController")
+        let coin3 = Coins(image: UIImage(named: "Ethereum")!, name: "Ethereum", progress: "3", controller: "EthereumViewController")
 //        let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", controller: "RippleViewContro )
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
-//
+       
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Users").child(uid!).child("Question Number").observeSingleEvent(of: .value, with: {(snap) in
+            print(snap)
+            if let snapDict = snap.value as? NSDictionary{
+                let progress = snapDict["Question Number"]
+                print(progress)
+            }
+        })
+
         tempCoins.append(coin1)
         tempCoins.append(coin2)
         tempCoins.append(coin3)
 //        tempCoins.append(coin4)
 //        tempCoins.append(coin5)
         
-        
+        tableView.reloadData()
         return tempCoins
     }
-    
-
-
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count

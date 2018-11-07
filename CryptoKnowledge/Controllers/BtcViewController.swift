@@ -13,7 +13,7 @@ import RealmSwift
 
 class BtcViewController: UIViewController  {
     
-    let questionList = QuestionBank()
+    let questionList = BitcoinBank()
     var questionNumber : Int = 0
     var pickedAnswer : Int = 0
     var qScore : Int = 0

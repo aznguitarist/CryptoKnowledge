@@ -68,13 +68,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func navigateToRegistration () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
+
         guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Registration") as? UIViewController else {
             return
         }
         present(mainRegistrationVC, animated: true, completion: nil)
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

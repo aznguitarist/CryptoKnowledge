@@ -18,7 +18,13 @@ class CryptoBank {
         cryptoBank.append(Questions(quest: "What are the safest types of wallets? ", c1: "Hardware", c2: "Phone", c3: "Online", ans: 1))
         cryptoBank.append(Questions(quest: "What does it mean if you store your crypto in a cold wallet?", c1: "You put it in the fridge.", c2: "You put it in wallet that's diconnected to the internet", c3: "You put your crypto in a wallet that is connected to the internet", ans: 2))
         cryptoBank.append(Questions(quest: "Exodus is an example of what type of wallet?", c1: "Paper Wallet", c2: "Hot wallet", c3: "Cold Wallet", ans: 2))
-        cryptoBank.append(Questions(quest: "What does decentralized mean?", c1: "It's not controlled by the government.", c2: "Its not controlled by a company", c3: "Both", ans: 3)) 
+        cryptoBank.append(Questions(quest: "What does decentralized mean?", c1: "It's not controlled by the government.", c2: "Its not controlled by a company", c3: "Both", ans: 3))
+        cryptoBank.append(Questions(quest: "What type of wallet is Ledger? ", c1: "Hardware", c2: "Paper", c3: "Hot", ans: 1))
+        cryptoBank.append(Questions(quest: "How many crypto-currencies are in existant?", c1: "100-200", c2: "1,000-2,000", c3: "2,000-3,000", ans: 2))
+        cryptoBank.append(Questions(quest: "What site is used to find market data on almost all crypto-currencies.", c1: "coinmarketcap.com", c2: "Coinbase.com", c3: "coins.com", ans: 1))
+        
+        cryptoBank.append(Questions(quest: "Which isn't a category of cryptocurrency? ", c1: "Stable coins", c2: "Private coins", c3: "Sky coins", ans: 3))
+        
         
     }
 }

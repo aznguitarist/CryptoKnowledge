@@ -12,11 +12,14 @@ import UIKit
 class Coins {
     var image : UIImage
     var name : String
+    var progress: String
     var vcControl: String
     
-    init(image: UIImage, name: String, controller: String) {
+    
+    init(image: UIImage, name: String, progress: String, controller: String) {
         self.image = image
         self.name = name
+        self.progress = progress
         self.vcControl = controller 
         
     }
