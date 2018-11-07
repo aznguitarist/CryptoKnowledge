@@ -13,10 +13,11 @@ import CoreData
 class CryptoViewController: UIViewController {
     
     var questionList = CryptoBank()
-    var score = 0
+    
     var pickedQuestion = 0
     var uid = FIRAuth.auth()?.currentUser?.uid
     var questionNumber = 0
+    var score = 0
     
     @IBOutlet weak var questionViewer: UILabel!
     @IBOutlet weak var choiceOne: UIButton!
@@ -28,15 +29,16 @@ class CryptoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         let questionNumberSaved = UserDefaults.standard.integer(forKey: "questionNumber")
             questionNumber = questionNumberSaved
-            print(questionNumberSaved)
-            print(questionNumber)
+        let scoreSaved = UserDefaults.standard.integer(forKey: "score")
+            score = scoreSaved
+            print(score, "is the score")
         update()
         
         view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
-        self.title = "Quiz"
+        self.title = "Crypto Quiz"
+        
         
         choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
@@ -46,15 +48,6 @@ class CryptoViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
-    }
-    
-    
-   func viewDidDisappear() {
-    super.viewDidDisappear(true)
-        
-        UserDefaults.standard.set(questionNumber, forKey: "questionNumber")
-        print("Goodbye")
-    
     }
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
@@ -72,7 +65,7 @@ class CryptoViewController: UIViewController {
     func checkAnswer(){
         let correctAnswer = questionList.cryptoBank[questionNumber].answer
         if pickedQuestion == correctAnswer {
-            score += 1
+            score += 100
         }else{
             print("Wrong Answer")
         }
@@ -84,6 +77,8 @@ class CryptoViewController: UIViewController {
             return}
         ref.child("Users").child(uid).child("Cryptoquiz").child("Question Number").setValue(questionNumber)
         ref.child("Users").child(uid).child("Cryptoquiz").child("Score").setValue(score)
+        UserDefaults.standard.set(questionNumber, forKey: "questionNumber")
+        UserDefaults.standard.set(score, forKey: "score")
     }
     
     func nextQuestion(){
@@ -108,13 +103,9 @@ class CryptoViewController: UIViewController {
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
         scoreLabel.text = "Score: \(score)"
         questionNumberView.text = "Question: \(questionNumber + 1)"
-        progressBarView.frame.size.width = (view.frame.size.width/9)  * CGFloat(questionNumber + 1)
+        progressBarView.frame.size.width = (view.frame.size.width/10)  * CGFloat(questionNumber + 1)
         updateFirebase()
-        
     }
-    
-
-    
     func startAgain(){
         score = 0
         questionNumber = 0

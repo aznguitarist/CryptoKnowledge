@@ -16,12 +16,11 @@ class BtcViewController: UIViewController  {
     let questionList = BitcoinBank()
     var questionNumber : Int = 0
     var pickedAnswer : Int = 0
-    var qScore : Int = 0
+    var score : Int = 0
     
     var ref: FIRDatabaseReference? 
     
     @IBOutlet weak var questionTextField: UITextView!
-    
     @IBOutlet weak var choiceOne: UIButton!
     @IBOutlet weak var choiceTwo: UIButton!
     @IBOutlet weak var choiceThree: UIButton!
@@ -34,6 +33,11 @@ class BtcViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Bitcoin Quiz"
+        
+        let questionNumberSaved = UserDefaults.standard.integer(forKey: "Btc Question Number")
+            questionNumber = questionNumberSaved
+        let scoreSaved = UserDefaults.standard.integer(forKey: "BTC Score")
+            score = scoreSaved
         
         updateData()
 //        questionTextField.layer.borderColor = UIColor.black.cgColor
@@ -74,8 +78,6 @@ class BtcViewController: UIViewController  {
         else if sender.tag == 3 {
             pickedAnswer = 3
         }
-        
-        
         checkAnswer()
         updateFirebase()
         questionNumber += 1
@@ -87,13 +89,16 @@ class BtcViewController: UIViewController  {
         guard let uid = FIRAuth.auth()?.currentUser!.uid else{
             return}
         
-        ref.child("Users").child(uid).child("Bitcoin Quiz").setValue(questionNumber)
+        ref.child("Users").child(uid).child("BTC").child("Bitcoin Quiz").setValue(questionNumber)
+        ref.child("Users").child(uid).child("BTC").child("Score").setValue(score)
+        UserDefaults.standard.set(questionNumber, forKey: "Btc Question Number")
+        UserDefaults.standard.set(score, forKey: "BTC Score")
     }
     
     func checkAnswer() {
         let correctAnswer = questionList.questionBank[questionNumber].answer
         if pickedAnswer == correctAnswer {
-            qScore += 100
+            score += 100
             print("correctAnswer")
             }
         else {
@@ -104,7 +109,7 @@ class BtcViewController: UIViewController  {
     func updateData() {
          let nextQuest = questionList.questionBank[questionNumber]
         questionNumberLabel.text = " Question \(questionNumber + 1)/ 15"
-        scoreLabel.text = "Score: \(qScore)"
+        scoreLabel.text = "Score: \(score)"
         questionTextField.text = nextQuest.question
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
@@ -118,19 +123,19 @@ class BtcViewController: UIViewController  {
             updateData()
             
         }else {
-            scoreLabel.text = "Score: \(qScore)"
+            scoreLabel.text = "Score: \(score)"
             let alert = UIAlertController(title: "You finished", message: "Would you like to play again?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
-                self.startOver()
+                self.startAgain()
             })
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
         }
     }
     
-    func startOver() {
+    func startAgain() {
         questionNumber = 0
-        qScore = 0
+        score = 0
         nextQuestion()
     }
     

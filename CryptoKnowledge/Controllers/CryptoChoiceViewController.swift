@@ -22,7 +22,6 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func goBackToLogin() {
         
-    
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
                 return
@@ -73,6 +72,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
                 let progress = snapDict["Question Number"]
                 print(progress)
             }
+            
         })
 
         tempCoins.append(coin1)

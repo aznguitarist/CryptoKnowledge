@@ -16,8 +16,6 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailTextFIeld: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +23,6 @@ class RegistrationViewController: UIViewController {
         passwordTextField.placeholder = "Create a password"
         
     }
-    
-    
-    
     
     @IBAction func registrationTapped(_ sender: AnyObject) {
         
