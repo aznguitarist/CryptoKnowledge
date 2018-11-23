@@ -6,17 +6,20 @@
 //  Copyright © 2018 Timothy Kruger. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Firebase
+import AVFoundation
 
-class EthereumViewController: UIViewController {
+
+class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
     
-   let etherQuestions = EQBank()
+    let etherQuestions = EQBank()
     var questionNumber = 0
     var score = 0
     var pickedAnswer = 0
     let uid = FIRAuth.auth()?.currentUser?.uid
+    var player = AVAudioPlayer()
+    var wrongNoise = AVAudioPlayer()
     
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var choiceOne: UIButton!
@@ -36,11 +39,11 @@ class EthereumViewController: UIViewController {
         
         
         super.viewDidLoad()
-        self.title = "Ethereum"
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
+        self.title = "Ethereum Quiz"
+        choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
+        choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
+        choiceThree.titleLabel?.textAlignment = NSTextAlignment.center 
         
         updateData() 
         questionTextField.text = etherQuestions.EqBank[questionNumber].question
@@ -48,8 +51,21 @@ class EthereumViewController: UIViewController {
         choiceTwo.setTitle(etherQuestions.EqBank[questionNumber].choice2, for: .normal)
         choiceThree.setTitle(etherQuestions.EqBank[questionNumber].choice3, for: .normal)
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.lightGray
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.lightGray]
     }
     
+    @objc func handleSegueToCryptoChoice(){
+        performSegue(withIdentifier: "EtherBackToCoinChoice", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as? CryptoChoiceViewController
+        vc?.etherScore = "\(score)"
+        
+    }
     
     @IBAction func answeredPressed(_ sender: AnyObject) {
         
@@ -82,9 +98,25 @@ class EthereumViewController: UIViewController {
     
     func checkAnswer(){
         if pickedAnswer == etherQuestions.EqBank[questionNumber].answer{
-            score += 1
+            
+            do {
+                let avPlayer = Bundle.main.url(forResource: "393908__pogmog__money-collect-5", withExtension: "wav")
+                player = try AVAudioPlayer(contentsOf: avPlayer!)
+            } catch{
+                print("Error with audio file")
+            }
+            
+            player.play()
+            score += 100
         }else {
+            do{
+                let avPlayer2 = Bundle.main.url(forResource: "basswronganswer", withExtension: "wav")
+                wrongNoise = try AVAudioPlayer(contentsOf: avPlayer2!)
+            }catch{
+                print("Error with wrong audio") 
+            }
             print("Wrong answer")
+            wrongNoise.play() 
         }
     }
     func updateData(){
@@ -97,6 +129,8 @@ class EthereumViewController: UIViewController {
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
         questionNum.text = "Question: \(questionNumber + 1)/10"
         progressBar.frame.size.width = (view.frame.size.width/10) * CGFloat(questionNumber + 1)
+        progressBar.backgroundColor = UIColor.gray.withAlphaComponent(0.30)
+        progressBar.layer.cornerRadius = 5 
         updateFirebase()
     }
     

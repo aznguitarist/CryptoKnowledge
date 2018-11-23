@@ -31,8 +31,8 @@ class BitcoinBank{
     questionBank.append(Questions(quest: "How often is the mining reward split in half? ", c1: "Every 4 years", c2: "Every 510,000 block", c3: "Every 100,000 blocks", ans: 2))
     questionBank.append(Questions(quest: "Why can Bitcoin be considered a commodity like gold?", c1: "Has a finite amount of 21 million", c2: "It's price correlates with gold's price", c3: "It's physical properties are similar to gold.", ans: 1))
     questionBank.append(Questions(quest: "What's the safest way to store your bitcoin?", c1: "Online wallets", c2: "Phone wallets", c3: "Hardware Wallets", ans: 3))
-    questionBank.append(Questions(quest: "Who get's the fees?", c1: "The miner(s) that mines the new block", c2: "The reciver of the transaction", c3: "Satoshi Nakamoto", ans: 1))
-    questionBank.append(Questions(quest: "What is a double spend?", c1: "When a sender tries to spend the same bitcoin.", c2: "When the receiver accidently recieves double what they are suposed to.", c3: "When the sender does two transactions at the same time", ans: 1))
+    questionBank.append(Questions(quest: "Who get's the fees?", c1: "The miner(s) that mines the new block.", c2: "The receiver of the transaction", c3: "Satoshi Nakamoto", ans: 1))
+    questionBank.append(Questions(quest: "What is a double spend?", c1: "When a sender tries to spend the same bitcoin.", c2: "When the receiver accidently receives double what they are suposed to.", c3: "When the sender does two transactions at the same time", ans: 1))
      questionBank.append(Questions(quest: "Why is it important to wait for a confirmation? ", c1: "Prevent a double spend", c2: "Make sure you can reverse the transaction later.", c3: "You can't check the transaction until you get one.", ans: 1))
     
     //15 questions

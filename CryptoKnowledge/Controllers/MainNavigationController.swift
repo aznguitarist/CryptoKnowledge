@@ -12,15 +12,8 @@ import UIKit
 class MainNavigationController : UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-       updateNavBar()
-      
+        view.setGradientBackground(oneColor: UIColor.black, twoColor: UIColor.blue)
         }
         
-    func updateNavBar(){
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back It UP", style: .plain, target: nil, action: nil)
-        //            guard let navBar = navigationController?.navigationBar else{
-        //                Print("Fatal Error: Navigation bar doesn't exist. ")
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.isTranslucent = true
-    }
+
 }

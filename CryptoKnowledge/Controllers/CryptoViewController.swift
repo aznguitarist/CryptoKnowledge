@@ -6,18 +6,18 @@
 //  Copyright © 2018 Timothy Kruger. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Firebase
-import CoreData
-class CryptoViewController: UIViewController {
-    
-    var questionList = CryptoBank()
-    
+import AVFoundation
+
+class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
+
+    let questionList = CryptoBank()
     var pickedQuestion = 0
     var uid = FIRAuth.auth()?.currentUser?.uid
     var questionNumber = 0
     var score = 0
+    var player = AVAudioPlayer()
     
     @IBOutlet weak var questionViewer: UILabel!
     @IBOutlet weak var choiceOne: UIButton!
@@ -29,25 +29,44 @@ class CryptoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let questionNumberSaved = UserDefaults.standard.integer(forKey: "questionNumber")
             questionNumber = questionNumberSaved
         let scoreSaved = UserDefaults.standard.integer(forKey: "score")
             score = scoreSaved
-            print(score, "is the score")
         update()
         
         view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
         self.title = "Crypto Quiz"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.blue]
+        
+        progressBarView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        progressBarView.frame.size.width = (view.frame.size.width/10)  * CGFloat(questionNumber + 1)
         
         
         choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
         choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//       self.navigationController?.view.backgroundColor = .clear
+//        self.navigationItem.backBarButtonItem?.title = "Try Again"
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
+        navigationItem.leftBarButtonItem?.tintColor = Colors.blackPurple
+    }
+    
+    @objc func handleCoinSelectionOut(){
+      performSegue(withIdentifier: "BackToSelection", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as? CryptoChoiceViewController
+        vc?.cryptoScore = "\(score)"
+        updateFirebase()
+        update()
     }
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
@@ -58,34 +77,45 @@ class CryptoViewController: UIViewController {
         else if sender.tag == 3 {
             pickedQuestion = 3}
         checkAnswer()
+        updateFirebase()
         questionNumber += 1
         nextQuestion()
     }
     
-    func checkAnswer(){
-        let correctAnswer = questionList.cryptoBank[questionNumber].answer
-        if pickedQuestion == correctAnswer {
-            score += 100
-        }else{
-            print("Wrong Answer")
-        }
-    }
+ 
     
     func updateFirebase(){
         let ref = FIRDatabase.database().reference()
         guard let uid = FIRAuth.auth()?.currentUser!.uid else{
             return}
+        
         ref.child("Users").child(uid).child("Cryptoquiz").child("Question Number").setValue(questionNumber)
         ref.child("Users").child(uid).child("Cryptoquiz").child("Score").setValue(score)
         UserDefaults.standard.set(questionNumber, forKey: "questionNumber")
         UserDefaults.standard.set(score, forKey: "score")
     }
     
+    func checkAnswer(){
+        let correctAnswer = questionList.cryptoBank[questionNumber].answer
+        if pickedQuestion == correctAnswer {
+            
+            do{
+                let avPlayer = Bundle.main.url(forResource: "393908__pogmog__money-collect-5", withExtension: "wav")
+                player = try AVAudioPlayer(contentsOf: avPlayer!)
+            }catch{
+                print("Audio Error")
+            }
+            player.play() 
+            score += 100
+        }else{
+            print("Wrong Answer")
+        }
+    }
+    
     func nextQuestion(){
         if questionNumber <= 9 {
             update()
         } else{
-            
             scoreLabel.text = "Score: \(score)"
             let alert = UIAlertController(title: "Done!", message: "Would you like to restart?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
@@ -93,6 +123,7 @@ class CryptoViewController: UIViewController {
             })
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
+          
         }}
     
     func update(){
@@ -104,12 +135,11 @@ class CryptoViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
         questionNumberView.text = "Question: \(questionNumber + 1)"
         progressBarView.frame.size.width = (view.frame.size.width/10)  * CGFloat(questionNumber + 1)
-        updateFirebase()
+      
     }
+    
     func startAgain(){
         score = 0
         questionNumber = 0
         update() 
-    }
-    }
-
+    }}

@@ -18,7 +18,7 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.setGradientBackground(oneColor: UIColor.red , twoColor: UIColor.black)
         emailTextFIeld.placeholder = "Enter your email here"
         passwordTextField.placeholder = "Create a password"
         

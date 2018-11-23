@@ -24,6 +24,8 @@ class CryptoBank {
         cryptoBank.append(Questions(quest: "What site is used to find market data on almost all crypto-currencies.", c1: "coinmarketcap.com", c2: "Coinbase.com", c3: "coins.com", ans: 1))
         
         cryptoBank.append(Questions(quest: "Which isn't a category of cryptocurrency? ", c1: "Stable coins", c2: "Private coins", c3: "Sky coins", ans: 3))
+        cryptoBank.append(Questions(quest: "One benefit of blockchain is..", c1: "The ability to have a decentralized currency", c2: "Be the sole owner of the company.", c3: "Makes tracking transactions more difficult.", ans: 1))
+        
         
         
     }

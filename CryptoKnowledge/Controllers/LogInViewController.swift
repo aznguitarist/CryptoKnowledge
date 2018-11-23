@@ -10,26 +10,53 @@ import Foundation
 import UIKit
 import Firebase
 import SVProgressHUD
+import AVFoundation
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerDelegate {
+    
+    var player = AVAudioPlayer()
+    
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
-    
-    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        do {
+            let audioPlayer = Bundle.main.url(forResource: "Dee_Yan-Key_-_06_-_Sweet_Silence", withExtension: "mp3")
+            player = try AVAudioPlayer(contentsOf: audioPlayer!)
+        } catch {
+            print("Error")
+        }
+        view.setGradientBackground(oneColor: UIColor.purple, twoColor: UIColor.black)
+        player.play()
         
         userNameTextField.placeholder = "Username"
         passwordTextField.placeholder = "Password"
         
         self.userNameTextField.delegate = self
         self.passwordTextField.delegate = self
+        
+        let userDefaultDict = UserDefaults.standard.dictionaryRepresentation()
+        
+        print(userDefaultDict)
    
+        for (key, value) in userDefaultDict {
+            print("\(key) = \(value) \n")
+        }
+        
+        
+        
     }
+    
+    
+    
     @IBAction func registerTapped(_ sender: Any) {
         navigateToRegistration()
         

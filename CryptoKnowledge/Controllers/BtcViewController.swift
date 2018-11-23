@@ -6,19 +6,21 @@
 //  Copyright © 2018 Timothy Kruger. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 import Firebase
-import RealmSwift
+import AVFoundation
 
-class BtcViewController: UIViewController  {
+
+class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     
     let questionList = BitcoinBank()
     var questionNumber : Int = 0
     var pickedAnswer : Int = 0
     var score : Int = 0
-    
-    var ref: FIRDatabaseReference? 
+    var ref: FIRDatabaseReference?
+    var player = AVAudioPlayer()
+    var wrongNoise = AVAudioPlayer() 
     
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var choiceOne: UIButton!
@@ -34,38 +36,48 @@ class BtcViewController: UIViewController  {
         super.viewDidLoad()
         self.title = "Bitcoin Quiz"
         
+        
+        
         let questionNumberSaved = UserDefaults.standard.integer(forKey: "Btc Question Number")
             questionNumber = questionNumberSaved
         let scoreSaved = UserDefaults.standard.integer(forKey: "BTC Score")
             score = scoreSaved
+         progressBar.backgroundColor = UIColor.black.withAlphaComponent(0.50)
         
         updateData()
 //        questionTextField.layer.borderColor = UIColor.black.cgColor
 //        questionTextField.layer.borderWidth = 2
 
 //        self.applyRoundCorners(choiceOne)
-        choiceOne.layer.borderColor = UIColor.black.cgColor
-        choiceOne.layer.borderWidth = 0.5
-        choiceOne.layer.cornerRadius = 20
+//        choiceOne.layer.borderColor = UIColor.black.cgColor
+//        choiceOne.layer.borderWidth = 0.5
+//        choiceOne.layer.cornerRadius = 20
+            choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
+            choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
+            choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
         
+            progressBar.layer.cornerRadius = 5
         
-        choiceTwo.layer.borderColor = UIColor.black.cgColor
-        choiceTwo.layer.borderWidth = 0.5
-        choiceTwo.layer.cornerRadius = 20
-        
-        choiceThree.layer.borderColor = UIColor.black.cgColor
-        choiceThree.layer.borderWidth = 0.5
-        choiceThree.layer.cornerRadius = 20 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleCoinSelectionOut))
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+        
         
     }
     
-    
+    @objc func handleCoinSelectionOut(){
+        performSegue(withIdentifier: "BtcBackToCoinChoice", sender: self)
+    }
  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as? CryptoChoiceViewController
+        vc?.btcScore = "\(score)"
+    }
+    
     
     @IBAction func answerPressed(_ sender: AnyObject) {
         if sender.tag == 1{
@@ -89,7 +101,7 @@ class BtcViewController: UIViewController  {
         guard let uid = FIRAuth.auth()?.currentUser!.uid else{
             return}
         
-        ref.child("Users").child(uid).child("BTC").child("Bitcoin Quiz").setValue(questionNumber)
+    ref.child("Users").child(uid).child("BTC").child("Bitcoin Quiz").setValue(questionNumber)
         ref.child("Users").child(uid).child("BTC").child("Score").setValue(score)
         UserDefaults.standard.set(questionNumber, forKey: "Btc Question Number")
         UserDefaults.standard.set(score, forKey: "BTC Score")
@@ -98,12 +110,25 @@ class BtcViewController: UIViewController  {
     func checkAnswer() {
         let correctAnswer = questionList.questionBank[questionNumber].answer
         if pickedAnswer == correctAnswer {
+            
+            do{
+                let avPlayer = Bundle.main.url(forResource: "393908__pogmog__money-collect-5", withExtension: "wav")
+                player = try AVAudioPlayer(contentsOf: avPlayer!)
+            } catch {
+                print("Error with audio")
+            }
+            player.play()
             score += 100
-            print("correctAnswer")
             }
         else {
+            do{
+                let avPlayer2 = Bundle.main.url(forResource: "basswronganswer", withExtension: "wav")
+            wrongNoise = try AVAudioPlayer(contentsOf: avPlayer2!)
+            }catch{"Error with audio"}
+            
             print("Try again")
-            }
+            wrongNoise.play() 
+        }
         }
   
     func updateData() {

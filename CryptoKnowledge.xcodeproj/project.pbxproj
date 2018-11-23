@@ -28,6 +28,13 @@
 		D471BD6F2177F9280056D396 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD6E2177F9280056D396 /* Questions.swift */; };
 		D471BD72217800140056D396 /* BitcoinBank .swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD71217800140056D396 /* BitcoinBank .swift */; };
 		D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */; };
+		D49C3E86219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E85219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 */; };
+		D49C3E88219B5E0C00A56DB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49C3E87219B5E0C00A56DB8 /* AVFoundation.framework */; };
+		D49C3E8A219B634F00A56DB8 /* Dee_Yan-Key_-_06_-_Sweet_Silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E89219B634F00A56DB8 /* Dee_Yan-Key_-_06_-_Sweet_Silence.mp3 */; };
+		D49C3E8C219B63BB00A56DB8 /* 393908__pogmog__money-collect-5.wav in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E8B219B63BB00A56DB8 /* 393908__pogmog__money-collect-5.wav */; };
+		D49C3E8E219B67C900A56DB8 /* basswronganswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E8D219B67C800A56DB8 /* basswronganswer.wav */; };
+		D49C3E90219B6CD000A56DB8 /* RippleBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */; };
+		D49C3E92219B715900A56DB8 /* RippleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C3E91219B715900A56DB8 /* RippleViewController.swift */; };
 		D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4A7BA218909AA007BF00A /* RealmData.swift */; };
 		D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */; };
 		D4C6E23621876F1E002A3564 /* CryptoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */; };
@@ -59,6 +66,13 @@
 		D471BD6E2177F9280056D396 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		D471BD71217800140056D396 /* BitcoinBank .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BitcoinBank .swift"; sourceTree = "<group>"; };
 		D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ethereumQuestionBank.swift; sourceTree = "<group>"; };
+		D49C3E85219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3"; sourceTree = SOURCE_ROOT; };
+		D49C3E87219B5E0C00A56DB8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D49C3E89219B634F00A56DB8 /* Dee_Yan-Key_-_06_-_Sweet_Silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dee_Yan-Key_-_06_-_Sweet_Silence.mp3"; sourceTree = SOURCE_ROOT; };
+		D49C3E8B219B63BB00A56DB8 /* 393908__pogmog__money-collect-5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "393908__pogmog__money-collect-5.wav"; sourceTree = SOURCE_ROOT; };
+		D49C3E8D219B67C800A56DB8 /* basswronganswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = basswronganswer.wav; sourceTree = SOURCE_ROOT; };
+		D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleBank.swift; sourceTree = "<group>"; };
+		D49C3E91219B715900A56DB8 /* RippleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleViewController.swift; sourceTree = "<group>"; };
 		D4B4A7BA218909AA007BF00A /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
 		D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoChoiceViewController.swift; sourceTree = "<group>"; };
 		D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49C3E88219B5E0C00A56DB8 /* AVFoundation.framework in Frameworks */,
 				84568EA030EE3E245BEAEBBF /* Pods_CryptoKnowledge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +94,7 @@
 		2D1844C5F3809875AC8B6EAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D49C3E87219B5E0C00A56DB8 /* AVFoundation.framework */,
 				77E594F379DBD2E936028785 /* Pods_CryptoKnowledge.framework */,
 			);
 			name = Frameworks;
@@ -123,6 +139,10 @@
 				D43A42392183750E00B16B20 /* GradientBackground.swift */,
 				D4BE6D8B21823B7F00B3F8B5 /* Models */,
 				D471BD5F2177D4F30056D396 /* Assets.xcassets */,
+				D49C3E85219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 */,
+				D49C3E89219B634F00A56DB8 /* Dee_Yan-Key_-_06_-_Sweet_Silence.mp3 */,
+				D49C3E8B219B63BB00A56DB8 /* 393908__pogmog__money-collect-5.wav */,
+				D49C3E8D219B67C800A56DB8 /* basswronganswer.wav */,
 				D471BD612177D4F30056D396 /* LaunchScreen.storyboard */,
 				D471BD642177D4F30056D396 /* Info.plist */,
 				D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */,
@@ -142,6 +162,7 @@
 				D43A4237218370A800B16B20 /* CryptoViewController.swift */,
 				D471BD6A2177F1A80056D396 /* BtcViewController.swift */,
 				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
+				D49C3E91219B715900A56DB8 /* RippleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D43A423521836D4600B16B20 /* CryptoQuestionBank.swift */,
+				D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */,
 				D471BD71217800140056D396 /* BitcoinBank .swift */,
 				D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */,
 				D471BD6E2177F9280056D396 /* Questions.swift */,
@@ -218,9 +240,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49C3E8C219B63BB00A56DB8 /* 393908__pogmog__money-collect-5.wav in Resources */,
 				D471BD632177D4F30056D396 /* LaunchScreen.storyboard in Resources */,
 				D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */,
 				D471BD602177D4F30056D396 /* Assets.xcassets in Resources */,
+				D49C3E8A219B634F00A56DB8 /* Dee_Yan-Key_-_06_-_Sweet_Silence.mp3 in Resources */,
+				D49C3E8E219B67C900A56DB8 /* basswronganswer.wav in Resources */,
+				D49C3E86219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 in Resources */,
 				D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,12 +328,14 @@
 				D43A423C218377CC00B16B20 /* constants.swift in Sources */,
 				D471BD6D2177F2B40056D396 /* EthereumViewController.swift in Sources */,
 				D471BD72217800140056D396 /* BitcoinBank .swift in Sources */,
+				D49C3E92219B715900A56DB8 /* RippleViewController.swift in Sources */,
 				D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */,
 				D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */,
 				D471BD6F2177F9280056D396 /* Questions.swift in Sources */,
 				D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */,
 				D471BD6B2177F1A80056D396 /* BtcViewController.swift in Sources */,
 				D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */,
+				D49C3E90219B6CD000A56DB8 /* RippleBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
