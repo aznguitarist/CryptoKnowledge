@@ -82,9 +82,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-JD-kIu">
-                                <rect key="frame" x="30" y="84" width="315" height="179.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="30" y="40" width="315" height="223.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.52988476910000004" green="0.77834574300000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -209,7 +209,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="Insert Question" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-lr-vnh">
-                                <rect key="frame" x="15" y="74" width="345" height="217"/>
+                                <rect key="frame" x="15" y="30" width="345" height="261"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
                             </textView>
@@ -345,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" verticalHuggingPriority="240" editable="NO" text="Whats the question?" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOB-0g-sFD">
-                                <rect key="frame" x="10" y="84" width="355" height="230"/>
+                                <rect key="frame" x="10" y="40" width="355" height="230"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="Hl7-Lw-QdU"/>
@@ -384,7 +384,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hbX-dt-uF5">
-                                <rect key="frame" x="50" y="339" width="275" height="200"/>
+                                <rect key="frame" x="50" y="295" width="275" height="200"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="K73-uc-H1f">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="63.5"/>
@@ -471,7 +471,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-T9-zwi" userLabel="choiceOne Button">
-                                <rect key="frame" x="40" y="329" width="295" height="50"/>
+                                <rect key="frame" x="40" y="285" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yUD-v1-0W7"/>
                                 </constraints>
@@ -483,7 +483,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfP-uc-S6D" userLabel="choiceTwo Button">
-                                <rect key="frame" x="40" y="389" width="295" height="50"/>
+                                <rect key="frame" x="40" y="345" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="G2F-sg-VVZ"/>
                                 </constraints>
@@ -495,7 +495,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9z-kB-pqA" userLabel="choiceThree Button">
-                                <rect key="frame" x="40" y="449" width="295" height="50"/>
+                                <rect key="frame" x="40" y="405" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HU5-5B-ZMV"/>
                                 </constraints>
@@ -507,7 +507,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ6-cl-ltI" userLabel="questionLabel">
-                                <rect key="frame" x="50" y="79" width="275" height="200"/>
+                                <rect key="frame" x="50" y="35" width="275" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="BKY-bk-4tA"/>
                                 </constraints>
@@ -644,13 +644,13 @@
                                     <action selector="registerTapped:" destination="Yqa-Z7-5ge" eventType="touchUpInside" id="6Xg-cN-lcB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="245" verticalCompressionResistancePriority="749" text="CryptoKnowledge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8h-q6-ahw">
-                                <rect key="frame" x="25" y="590.5" width="325" height="76.5"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="22"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="245" verticalCompressionResistancePriority="749" text="Crypto-Know " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8h-q6-ahw">
+                                <rect key="frame" x="25" y="550" width="325" height="117"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reD-3S-NOb">
                                 <rect key="frame" x="125" y="355.5" width="125" height="60"/>
@@ -795,6 +795,6 @@
         <image name="currencies" width="960" height="470"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Oc-r8-Q3d"/>
+        <segue reference="QqL-zA-gTU"/>
     </inferredMetricsTieBreakers>
 </document>

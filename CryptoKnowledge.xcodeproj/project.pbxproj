@@ -490,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimothyKruger.CryptoKnowledge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CryptoKnowledge;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -509,7 +509,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimothyKruger.CryptoKnowledge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CryptoKnowledge;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

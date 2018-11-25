@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
         } catch {
             print("Error")
         }
-        view.setGradientBackground(oneColor: UIColor.purple, twoColor: UIColor.black)
+        view.setGradientBackground(oneColor: Colors.iconDarkBlue, twoColor: UIColor.black)
         player.play()
         
         userNameTextField.placeholder = "Username"

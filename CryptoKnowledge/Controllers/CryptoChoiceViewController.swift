@@ -18,7 +18,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     var cryptoScore = ""
     var btcScore = ""
     var etherScore = ""
-    var rippleScore = "none"
+    var rippleScore = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,29 +39,20 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         self.title = "CryptoKnowledge"
 //     view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(goBackToLogin))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.iconContrastYellow]
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.barTintColor = Colors.darkPurple
+        self.navigationController?.navigationBar.barTintColor = Colors.iconDarkBlue
         //       self.navigationController?.navigationBar.shadowImage = UIImage()
        self.navigationController?.navigationBar.isOpaque = true
         self.navigationController?.navigationBar.isTranslucent = true
 //        self.navigationController?.navigationBar.isTranslucent = true
-         tableView.backgroundColor = Colors.blackPurple2
+         tableView.backgroundColor = Colors.iconDarkBlue
         
         coins = createArray()
         
     
-        // Do any additional setup after loading the view.
-        
    
-        
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        tableView.tableFooterView = UIView()
-//        tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
-       
-     
         tableView.reloadData()
         
     }
@@ -113,6 +104,9 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         cell.coinImageView.layer.shadowOpacity = 0.5
         cell.coinImageView.layer.shadowOffset = CGSize(width: 5, height: 10)
     
+        cell.progressLabel.textColor = Colors.iconContrastYellow
+        cell.coinLabel.textColor = Colors.iconContrastYellow 
+        
         cell.backgroundColor = UIColor.clear
 //       cell.setGradientBackground2(oneColor: UIColor.black, twoColor: UIColor.blue)
     

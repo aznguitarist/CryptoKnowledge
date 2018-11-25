@@ -35,7 +35,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Bitcoin Quiz"
-        
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         
         
         let questionNumberSaved = UserDefaults.standard.integer(forKey: "Btc Question Number")

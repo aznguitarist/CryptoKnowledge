@@ -40,12 +40,13 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
 ////        let navItem = UINavigationItem(title: "Ripple")
 //        //        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(done))
 //        //        navItem.rightBarButtonItem = doneItem
-//
+
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.gray]
         
       navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
-      navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+      navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//
+
 //        view.addSubview(navBar)
 //        setNavigationBar()
         updateData()
@@ -66,8 +67,7 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
-        navBar.setItems([navItem], animated: false)
-        view.addSubview(navBar)
+       
     }
     
     @objc func handleSegueToCryptoChoice(){

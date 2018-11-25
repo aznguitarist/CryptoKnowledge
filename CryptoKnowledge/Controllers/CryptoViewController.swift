@@ -55,7 +55,7 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
 //        self.navigationItem.backBarButtonItem?.title = "Try Again"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
-        navigationItem.leftBarButtonItem?.tintColor = Colors.blackPurple
+        navigationItem.leftBarButtonItem?.tintColor = Colors.blue
     }
     
     @objc func handleCoinSelectionOut(){
