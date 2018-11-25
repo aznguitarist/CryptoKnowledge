@@ -60,7 +60,6 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
 //        tableView.dataSource = self
 //        tableView.tableFooterView = UIView()
 //        tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
-        tableView.rowHeight = UITableView.automaticDimension
        
      
         tableView.reloadData()
@@ -80,7 +79,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         
         let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz", progress: "Score: \(cryptoScore)" , controller: "CryptoViewController")
         let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", progress: "Score: \(btcScore)", controller: "BtcViewController")
-        let coin3 = Coins(image: UIImage(named: "Ethereum")!, name: "Ethereum", progress: "Score: \(etherScore)", controller: "EthereumViewController")
+        let coin3 = Coins(image: UIImage(named: "Ethereuma")!, name: "Ethereum", progress: "Score: \(etherScore)", controller: "EthereumViewController")
         let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore)", controller: "RippleViewController" )
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
         
