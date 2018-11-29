@@ -35,31 +35,24 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Bitcoin Quiz"
-         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
-        
+      
         
         let questionNumberSaved = UserDefaults.standard.integer(forKey: "Btc Question Number")
             questionNumber = questionNumberSaved
         let scoreSaved = UserDefaults.standard.integer(forKey: "BTC Score")
             score = scoreSaved
-         progressBar.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        view.pushTransitionBottom(1)
+        questionTextField.pushTransitionLeft(1)
         
         updateData()
-//        questionTextField.layer.borderColor = UIColor.black.cgColor
-//        questionTextField.layer.borderWidth = 2
 
-//        self.applyRoundCorners(choiceOne)
-//        choiceOne.layer.borderColor = UIColor.black.cgColor
-//        choiceOne.layer.borderWidth = 0.5
-//        choiceOne.layer.cornerRadius = 20
             choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
             choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
             choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
         
-            progressBar.layer.cornerRadius = 5
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleCoinSelectionOut))
-        
+           self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -91,9 +84,10 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
             pickedAnswer = 3
         }
         checkAnswer()
-        updateFirebase()
         questionNumber += 1
+        scoreLabel.pushTransitionBottom(1)
         nextQuestion()
+        
     }
     
     func updateFirebase(){
@@ -133,13 +127,18 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
   
     func updateData() {
          let nextQuest = questionList.questionBank[questionNumber]
-        questionNumberLabel.text = " Question \(questionNumber + 1)/ 15"
+        questionNumberLabel.text = " Question \(questionNumber + 1)/ 25"
         scoreLabel.text = "Score: \(score)"
         questionTextField.text = nextQuest.question
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
-        progressBar.frame.size.width = (view.frame.size.width/15) * CGFloat(questionNumber + 1)
+        progressBar.frame.size.width = (view.frame.size.width/25) * CGFloat(questionNumber + 1)
+        progressBar.layer.cornerRadius = 5
+        progressBar.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        questionTextField.pushTransitionTop(1)
+        questionNumberLabel.pushTransitionRight(1)
+         updateFirebase()
     }
     
     func nextQuestion() {
@@ -164,10 +163,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
         nextQuestion()
     }
     
-    func applyRoundCorners(_ Object: AnyObject){
-        Object.layer.cornerRadius = Object.frame.size.width / 2
-        Object.layer.masksToBounds = true
-    }
+
     
     }
     

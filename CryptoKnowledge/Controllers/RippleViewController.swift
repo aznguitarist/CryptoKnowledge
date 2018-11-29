@@ -34,19 +34,14 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         view.setGradientBackground(oneColor: UIColor.darkGray , twoColor: UIColor.blue)
         self.title = "Ripple Quiz"
-//        let screenSize: CGRect = UIScreen.main.bounds
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 300))
-//        navBar.heightAnchor =
-////        let navItem = UINavigationItem(title: "Ripple")
-//        //        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(done))
-//        //        navItem.rightBarButtonItem = doneItem
-
+        view.pushTransitionLeft(1)
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.gray]
         
       navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
       navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-
+        view.pushTransitionBottom(1)
 //        view.addSubview(navBar)
 //        setNavigationBar()
         updateData()
@@ -107,6 +102,7 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
             }
             player.play()
             score += 100
+            scoreLabel.pushTransitionBottom(1)
         }
         else{
             do{
@@ -125,9 +121,11 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
         choiceOneButton.setTitle(nextQuestion.choice1, for: .normal)
         choiceTwoButton.setTitle(nextQuestion.choice2, for: .normal)
         choiceThreeButton.setTitle(nextQuestion.choice3, for: .normal)
-        questionNumberLabel.text = "Question: \(questionNumber + 1)/12"
-        progressBarView.frame.size.width = (view.frame.size.width/12) * CGFloat(questionNumber + 1)
+        questionNumberLabel.text = "Question: \(questionNumber + 1)/25"
+        progressBarView.frame.size.width = (view.frame.size.width/25) * CGFloat(questionNumber + 1)
         progressBarView.backgroundColor = UIColor.gray.withAlphaComponent(0.30)
+        questionLabel.pushTransitionTop(1)
+        questionNumberLabel.pushTransitionRight(1)
        
     }
     
@@ -143,7 +141,7 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func nextQuestion(){
-        if questionNumber <= 11 {
+        if questionNumber <= 24 {
             updateData()
             
         }else{

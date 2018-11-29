@@ -31,5 +31,6 @@ struct Colors {
     static let iconDarkPurple = UIColor(red: 85.0/255.0, green: 17.0/255.0, blue: 83.0/255.0, alpha: 1)
     
     static let iconContrastYellow = UIColor(red: 255.0/255.0, green: 195.0/255.0, blue: 0.0/255.0, alpha: 1)
+    static let moneroOrange = UIColor(red: 255.0/255.0, green: 102.0/255.0, blue: 0.0/255.0, alpha: 1)
 }
 

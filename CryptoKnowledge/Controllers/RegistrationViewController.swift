@@ -45,7 +45,7 @@ class RegistrationViewController: UIViewController {
                 
                 userReference.updateChildValues(values, withCompletionBlock: {(err,ref) in
                     if err != nil{
-                        print(err)
+                        print(err!)
                         return
                     }
                  self.goBacktoLogin()

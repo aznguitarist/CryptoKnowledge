@@ -18,6 +18,7 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
     var questionNumber = 0
     var score = 0
     var player = AVAudioPlayer()
+    var wrongAnswerNoise = AVAudioPlayer()
     
     @IBOutlet weak var questionViewer: UILabel!
     @IBOutlet weak var choiceOne: UIButton!
@@ -36,17 +37,19 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
             score = scoreSaved
         update()
         
-        view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
-        self.title = "Crypto Quiz"
+       view.setGradientBackground(oneColor: UIColor.black , twoColor: UIColor.blue)
+        self.title = "Blockchain"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.blue]
         
         progressBarView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        progressBarView.frame.size.width = (view.frame.size.width/10)  * CGFloat(questionNumber + 1)
+        progressBarView.frame.size.width = (view.frame.size.width/25)  * CGFloat(questionNumber + 1)
+        progressBarView.layer.cornerRadius = 9
         
         
         choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
         choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
+      
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -54,12 +57,14 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
 //       self.navigationController?.view.backgroundColor = .clear
 //        self.navigationItem.backBarButtonItem?.title = "Try Again"
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
         navigationItem.leftBarButtonItem?.tintColor = Colors.blue
     }
     
     @objc func handleCoinSelectionOut(){
       performSegue(withIdentifier: "BackToSelection", sender: self)
+        view.pushTransitionLeft(5)
+        questionViewer.pushTransitionRight(5)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +72,7 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         vc?.cryptoScore = "\(score)"
         updateFirebase()
         update()
+     
     }
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
@@ -107,13 +113,22 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
             }
             player.play() 
             score += 100
+            scoreLabel.pushTransitionBottom(1)
         }else{
-            print("Wrong Answer")
-        }
+            
+            do{
+                let avPlayer = Bundle.main.url(forResource: "basswronganswer", withExtension: "wav")
+                wrongAnswerNoise = try AVAudioPlayer(contentsOf: avPlayer!)
+            }catch{
+                print("Audio Error")
+                
+            }
+            wrongAnswerNoise.play()
+            }
     }
     
     func nextQuestion(){
-        if questionNumber <= 9 {
+        if questionNumber <= 24 {
             update()
         } else{
             scoreLabel.text = "Score: \(score)"
@@ -127,15 +142,17 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         }}
     
     func update(){
+        view.pushTransitionLeft(1)
         let nextQuest = questionList.cryptoBank[questionNumber]
         questionViewer.text = nextQuest.question
+        questionViewer.pushTransitionTop(2)
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
         scoreLabel.text = "Score: \(score)"
-        questionNumberView.text = "Question: \(questionNumber + 1)"
-        progressBarView.frame.size.width = (view.frame.size.width/10)  * CGFloat(questionNumber + 1)
-      
+        questionNumberView.text = "Question: \(questionNumber + 1)/25"
+        progressBarView.frame.size.width = (view.frame.size.width/25)  * CGFloat(questionNumber + 1)
+        questionNumberView.pushTransitionBottom(1)
     }
     
     func startAgain(){

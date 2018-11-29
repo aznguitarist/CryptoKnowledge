@@ -13,12 +13,13 @@ import Firebase
 class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     var coins: [Coins] = []
-    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","rippleSegue"]
+    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","rippleSegue","moneroSegue"]
     let navItem = UINavigationItem()
     var cryptoScore = ""
     var btcScore = ""
     var etherScore = ""
     var rippleScore = ""
+    var moneroScore = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,42 +37,45 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.pushTransitionLeft(5)
+        tableView.pushTransitionRightSlow(5)
+        
         self.title = "CryptoKnowledge"
 //     view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(goBackToLogin))
         navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.iconContrastYellow]
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.barTintColor = Colors.iconDarkBlue
+        navigationController?.navigationBar.barTintColor = Colors.iconDarkBlue
         //       self.navigationController?.navigationBar.shadowImage = UIImage()
-       self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.navigationBar.isTranslucent = true
-         tableView.backgroundColor = Colors.iconDarkBlue
+//       self.navigationController?.navigationBar.isOpaque = true
+//       navigationController?.navigationBar.isTranslucent = true
+
+        tableView.backgroundColor = Colors.iconDarkBlue
+        
+       
         
         coins = createArray()
-        
-    
-   
         tableView.reloadData()
         
     }
     
-   
+
+    
     func createArray() -> [Coins] {
-        
-       
         let userScoresAndQuestNumb = UserDefaults.standard
         let cryptoScore = userScoresAndQuestNumb.integer(forKey: "score")
         let btcScore = userScoresAndQuestNumb.integer(forKey: "BTC Score")
         let etherScore = userScoresAndQuestNumb.integer(forKey: "Ether Score")
         let rippleScore = userScoresAndQuestNumb.integer(forKey: "Ripple Score")
+        let moneroScore = userScoresAndQuestNumb.integer(forKey: "Monero Score")
         var tempCoins: [Coins] = []
         
-        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Crypto Quiz", progress: "Score: \(cryptoScore)" , controller: "CryptoViewController")
+        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Blockchain", progress: "Score: \(cryptoScore)" , controller: "CryptoViewController")
         let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", progress: "Score: \(btcScore)", controller: "BtcViewController")
         let coin3 = Coins(image: UIImage(named: "Ethereuma")!, name: "Ethereum", progress: "Score: \(etherScore)", controller: "EthereumViewController")
         let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore)", controller: "RippleViewController" )
+        let coin5 = Coins(image: UIImage(named: "monerosmall")!, name: "Monero", progress: "Score: \(moneroScore)", controller: "MoneroViewController")
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
         
 
@@ -79,8 +83,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         tempCoins.append(coin2)
         tempCoins.append(coin3)
         tempCoins.append(coin4)
-//        tempCoins.append(coin4)
-//        tempCoins.append(coin5)
+        tempCoins.append(coin5)
         
         tableView.reloadData()
         return tempCoins
@@ -108,10 +111,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         cell.coinLabel.textColor = Colors.iconContrastYellow 
         
         cell.backgroundColor = UIColor.clear
-//       cell.setGradientBackground2(oneColor: UIColor.black, twoColor: UIColor.blue)
-    
-      
-        
+//      cell.setGradientBackground(oneColor: UIColor.black, twoColor: UIColor.blue)
         return cell
     }
     

@@ -39,7 +39,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         
         
         super.viewDidLoad()
-        view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
+     
         self.title = "Ethereum Quiz"
         choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
@@ -52,9 +52,9 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         choiceThree.setTitle(etherQuestions.EqBank[questionNumber].choice3, for: .normal)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.lightGray
-        
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.lightGray]
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.gray]
+        view.pushTransitionTop(1)
     }
     
     @objc func handleSegueToCryptoChoice(){
@@ -64,8 +64,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as? CryptoChoiceViewController
         vc?.etherScore = "\(score)"
-        
-    }
+            }
     
     @IBAction func answeredPressed(_ sender: AnyObject) {
         
@@ -83,6 +82,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         checkAnswer()
         questionNumber += 1
         nextQuestion()
+        scoreLabel.pushTransitionTop(1)
         
     }
     
@@ -108,6 +108,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
             
             player.play()
             score += 100
+            scoreLabel.pushTransitionBottom(1) 
         }else {
             do{
                 let avPlayer2 = Bundle.main.url(forResource: "basswronganswer", withExtension: "wav")
@@ -127,17 +128,18 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
-        questionNum.text = "Question: \(questionNumber + 1)/10"
-        progressBar.frame.size.width = (view.frame.size.width/10) * CGFloat(questionNumber + 1)
+        questionNum.text = "Question: \(questionNumber + 1)/25"
+        progressBar.frame.size.width = (view.frame.size.width/25) * CGFloat(questionNumber + 1)
         progressBar.backgroundColor = UIColor.gray.withAlphaComponent(0.30)
-        progressBar.layer.cornerRadius = 5 
+        progressBar.layer.cornerRadius = 5
+        questionTextField.pushTransitionTop(1)
+        questionNum.pushTransitionRight(1)
         updateFirebase()
     }
     
     
     func nextQuestion() {
-        if questionNumber <= 9 {
-            
+        if questionNumber <= 24 {
             updateData()
             
         }else{
