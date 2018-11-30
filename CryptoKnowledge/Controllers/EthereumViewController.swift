@@ -82,7 +82,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         checkAnswer()
         questionNumber += 1
         nextQuestion()
-        scoreLabel.pushTransitionTop(1)
+        
         
     }
     
@@ -133,7 +133,7 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         progressBar.backgroundColor = UIColor.gray.withAlphaComponent(0.30)
         progressBar.layer.cornerRadius = 5
         questionTextField.pushTransitionTop(1)
-        questionNum.pushTransitionRight(1)
+        questionNum.pushTransitionLeft(1)
         updateFirebase()
     }
     

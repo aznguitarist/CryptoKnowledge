@@ -27,7 +27,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     @objc func goBackToLogin() {
         
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
+            guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? UIViewController else {
                 return
             }
             present(mainRegistrationVC, animated: true, completion: nil)
@@ -42,7 +42,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         
         self.title = "CryptoKnowledge"
 //     view.setGradientBackground(oneColor: UIColor.blue , twoColor: UIColor.black)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(goBackToLogin))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBackToLogin))
         navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.iconContrastYellow]
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

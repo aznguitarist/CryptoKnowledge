@@ -27,6 +27,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        logInButton.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: Colors.iconDarkPurple)
+        logInButton.layer.cornerRadius = 10
         
         do {
             let audioPlayer = Bundle.main.url(forResource: "Dee_Yan-Key_-_06_-_Sweet_Silence", withExtension: "mp3")
@@ -83,15 +85,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
         
     }
     
+//    private func navigateToChoice () {
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//        guard let mainNavigationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? MainNavigationController else {
+//            return
+//        }
+//        present(mainNavigationVC, animated: true, completion: nil)
+//    }
+
     private func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-        guard let mainNavigationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else {
+        
+        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? UIViewController else {
             return
         }
-        present(mainNavigationVC, animated: true, completion: nil)
+        present(mainRegistrationVC, animated: true, completion: nil)
     }
-
     
     private func navigateToRegistration () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)

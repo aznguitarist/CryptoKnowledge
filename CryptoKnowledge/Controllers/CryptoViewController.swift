@@ -50,7 +50,8 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
         choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
       
-
+        view.pushTransitionLeft(1)
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationController?.navigationBar.isTranslucent = true
@@ -59,6 +60,7 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
         navigationItem.leftBarButtonItem?.tintColor = Colors.blue
+  
     }
     
     @objc func handleCoinSelectionOut(){
@@ -142,7 +144,7 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         }}
     
     func update(){
-        view.pushTransitionLeft(1)
+        
         let nextQuest = questionList.cryptoBank[questionNumber]
         questionViewer.text = nextQuest.question
         questionViewer.pushTransitionTop(2)
