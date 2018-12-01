@@ -13,13 +13,14 @@ import Firebase
 class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     var coins: [Coins] = []
-    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","rippleSegue","moneroSegue"]
+    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","moneroSegue","rippleSegue","toTether"]
     let navItem = UINavigationItem()
     var cryptoScore = ""
     var btcScore = ""
     var etherScore = ""
     var rippleScore = ""
     var moneroScore = ""
+    var tetherScore = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,7 +28,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     @objc func goBackToLogin() {
         
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? UIViewController else {
+            guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "FirstMainNavigationController") as? UIViewController else {
                 return
             }
             present(mainRegistrationVC, animated: true, completion: nil)
@@ -69,6 +70,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         let etherScore = userScoresAndQuestNumb.integer(forKey: "Ether Score")
         let rippleScore = userScoresAndQuestNumb.integer(forKey: "Ripple Score")
         let moneroScore = userScoresAndQuestNumb.integer(forKey: "Monero Score")
+        let tetherScore = userScoresAndQuestNumb.integer(forKey: "Tether Score")
         var tempCoins: [Coins] = []
         
         let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Blockchain", progress: "Score: \(cryptoScore)" , controller: "CryptoViewController")
@@ -76,14 +78,16 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         let coin3 = Coins(image: UIImage(named: "Ethereuma")!, name: "Ethereum", progress: "Score: \(etherScore)", controller: "EthereumViewController")
         let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore)", controller: "RippleViewController" )
         let coin5 = Coins(image: UIImage(named: "monerosmall")!, name: "Monero", progress: "Score: \(moneroScore)", controller: "MoneroViewController")
+        let coin6 = Coins(image: UIImage(named: "tether")!, name: "Tether", progress: "Score: \(tetherScore)", controller: "TetherViewController")
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
         
 
         tempCoins.append(coin1)
         tempCoins.append(coin2)
         tempCoins.append(coin3)
-        tempCoins.append(coin4)
         tempCoins.append(coin5)
+        tempCoins.append(coin4)
+        tempCoins.append(coin6)
         
         tableView.reloadData()
         return tempCoins
@@ -117,7 +121,6 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)    }
- 
 
 }
 

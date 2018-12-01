@@ -97,7 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
     private func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? UIViewController else {
+        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "FirstMainNavigationController") as? UIViewController else {
             return
         }
         present(mainRegistrationVC, animated: true, completion: nil)

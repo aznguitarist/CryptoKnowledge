@@ -1,22 +1,22 @@
 //
-//  MainNavigationController.swift
+//  FirstMainNavigationController.swift
 //  CryptoKnowledge
 //
-//  Created by Timothy Kruger on 10/19/18.
+//  Created by Timothy Kruger on 11/30/18.
 //  Copyright © 2018 Timothy Kruger. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MainNavigationController : UINavigationController {
+class FirstMainNavigationController : UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigateToChoice()
         
-        }
-        
+    }
+    
     func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         

@@ -13,6 +13,7 @@
 		D41D4FCE21B0BDE200776D5E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */; };
 		D41D4FD021B0EBB600776D5E /* NavBarGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCF21B0EBB600776D5E /* NavBarGradient.swift */; };
 		D41D4FD221B19D7300776D5E /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FD121B19D7300776D5E /* UIButtonExtensions.swift */; };
+		D41D4FD421B1E12300776D5E /* FirstMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */; };
 		D439297621925A64004C3B6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D439297521925A63004C3B6A /* User.swift */; };
 		D43A423621836D4600B16B20 /* CryptoQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A423521836D4600B16B20 /* CryptoQuestionBank.swift */; };
 		D43A4238218370A800B16B20 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A4237218370A800B16B20 /* CryptoViewController.swift */; };
@@ -41,6 +42,9 @@
 		D49C3E8E219B67C900A56DB8 /* basswronganswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E8D219B67C800A56DB8 /* basswronganswer.wav */; };
 		D49C3E90219B6CD000A56DB8 /* RippleBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */; };
 		D49C3E92219B715900A56DB8 /* RippleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C3E91219B715900A56DB8 /* RippleViewController.swift */; };
+		D49EF1BC21B1F82600AE8749 /* TetherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1BB21B1F82600AE8749 /* TetherViewController.swift */; };
+		D49EF1BE21B1F96500AE8749 /* TetherBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1BD21B1F96500AE8749 /* TetherBank.swift */; };
+		D49EF1C421B30CC600AE8749 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */; };
 		D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4A7BA218909AA007BF00A /* RealmData.swift */; };
 		D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */; };
 		D4C6E23621876F1E002A3564 /* CryptoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */; };
@@ -55,6 +59,7 @@
 		D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D41D4FCF21B0EBB600776D5E /* NavBarGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarGradient.swift; sourceTree = "<group>"; };
 		D41D4FD121B19D7300776D5E /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainNavigationController.swift; sourceTree = "<group>"; };
 		D439297521925A63004C3B6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D43A423521836D4600B16B20 /* CryptoQuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoQuestionBank.swift; sourceTree = "<group>"; };
 		D43A4237218370A800B16B20 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +90,9 @@
 		D49C3E8D219B67C800A56DB8 /* basswronganswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = basswronganswer.wav; sourceTree = SOURCE_ROOT; };
 		D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleBank.swift; sourceTree = "<group>"; };
 		D49C3E91219B715900A56DB8 /* RippleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleViewController.swift; sourceTree = "<group>"; };
+		D49EF1BB21B1F82600AE8749 /* TetherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetherViewController.swift; sourceTree = "<group>"; };
+		D49EF1BD21B1F96500AE8749 /* TetherBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetherBank.swift; sourceTree = "<group>"; };
+		D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
 		D4B4A7BA218909AA007BF00A /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
 		D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoChoiceViewController.swift; sourceTree = "<group>"; };
 		D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +180,7 @@
 				D471BD552177D4F10056D396 /* AppDelegate.swift */,
 				D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */,
 				D45DA1CE217994A2006E1D64 /* LogInViewController.swift */,
+				D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */,
 				D41A7999217E4CEA003F073A /* RegistrationViewController.swift */,
 				D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */,
 				D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */,
@@ -180,6 +189,8 @@
 				D49C3E91219B715900A56DB8 /* RippleViewController.swift */,
 				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
 				D48986D621AED36900FC8FB5 /* MoneroViewController.swift */,
+				D49EF1BB21B1F82600AE8749 /* TetherViewController.swift */,
+				D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */,
 				D48986D821AEE43100FC8FB5 /* MoneroBank.swift */,
 				D471BD6E2177F9280056D396 /* Questions.swift */,
+				D49EF1BD21B1F96500AE8749 /* TetherBank.swift */,
 				D439297521925A63004C3B6A /* User.swift */,
 			);
 			path = Models;
@@ -344,6 +356,8 @@
 				D439297621925A64004C3B6A /* User.swift in Sources */,
 				D43A4238218370A800B16B20 /* CryptoViewController.swift in Sources */,
 				D4C6E23621876F1E002A3564 /* CryptoCellTableViewCell.swift in Sources */,
+				D41D4FD421B1E12300776D5E /* FirstMainNavigationController.swift in Sources */,
+				D49EF1C421B30CC600AE8749 /* WalletsViewController.swift in Sources */,
 				D43A423C218377CC00B16B20 /* constants.swift in Sources */,
 				D471BD6D2177F2B40056D396 /* EthereumViewController.swift in Sources */,
 				D48986D721AED36900FC8FB5 /* MoneroViewController.swift in Sources */,
@@ -352,8 +366,10 @@
 				D471BD72217800140056D396 /* BitcoinBank .swift in Sources */,
 				D41D4FCE21B0BDE200776D5E /* MenuViewController.swift in Sources */,
 				D49C3E92219B715900A56DB8 /* RippleViewController.swift in Sources */,
+				D49EF1BC21B1F82600AE8749 /* TetherViewController.swift in Sources */,
 				D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */,
 				D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */,
+				D49EF1BE21B1F96500AE8749 /* TetherBank.swift in Sources */,
 				D471BD6F2177F9280056D396 /* Questions.swift in Sources */,
 				D41D4FD021B0EBB600776D5E /* NavBarGradient.swift in Sources */,
 				D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */,

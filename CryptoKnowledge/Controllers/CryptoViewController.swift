@@ -78,12 +78,19 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
+        
         if sender.tag == 1 {
-            pickedQuestion = 1}
+            pickedQuestion = 1
+            choiceOne.shake()
+        }
         else if sender.tag == 2 {
-            pickedQuestion = 2}
+            pickedQuestion = 2
+            choiceTwo.flash()
+        }
         else if sender.tag == 3 {
-            pickedQuestion = 3}
+            pickedQuestion = 3
+            choiceThree.pulsate()
+        }
         checkAnswer()
         updateFirebase()
         questionNumber += 1

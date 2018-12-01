@@ -23,34 +23,43 @@ class MenuViewController: UIViewController{
   
         view.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: Colors.blackPurple)
 //        view.setGradientBackground5(oneColor: UIColor.gray, twoColor: UIColor.blue, threeColor: UIColor.gray)
-      
-//        quizesButton.setGradientBack(oneColor: UIColor.purple, twoColor: UIColor.blue)
+        title = "Menu"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector (backToLogIn))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.purple
+       navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.layer.shadowColor = UIColor.purple.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.3
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 10
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
         quizesButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         quizesButton.setTitle("Quizes", for: .normal)
         quizesButton.layer.cornerRadius = quizesButton.bounds.size.height/2
-        
+
         walletsButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         walletsButton.setTitle("Wallets", for: .normal)
         walletsButton.layer.cornerRadius = walletsButton.bounds.size.height/2
         
-        
     }
   
+   
+    @IBAction func quizzesTapped(_ sender: Any) {
+        quizesButton.pulsate()
+        quizesButton.shake()
+        
+       navigateToQuizes()
+       
+    }
+    
+    @IBAction func walletsTapped(_ sender: Any) {
+        walletsButton.shake()
+        navigateToWallets()
+    }
+    
 
-//    func setNavigationBar() {
-//
-//        let navBar = UINavigationBar(frame: CGRect(x: 1.0, y: 0, width: view.frame.size.width , height: 44))
-//       let navItem = UINavigationItem(title: "Main Menu")
-//       let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backToLogIn))
-////        navItem.leftBarButtonItem = backButton
-////        navBar.backgroundColor = UIColor.green
-////        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.iconContrastYellow]
-////
-////        navItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
-////        navBar.barTintColor = UIColor.clear
-////        navBar.setItems([navItem], animated: true)
-//        self.view.addSubview(navBar)
-//    }
     
     @objc func backToLogIn() { 
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -62,7 +71,7 @@ class MenuViewController: UIViewController{
         }
     
     
-    @objc func navigateToQuizes() {
+func navigateToQuizes() {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
@@ -71,7 +80,21 @@ class MenuViewController: UIViewController{
         }
         present(mainRegistrationVC, animated: true, completion: nil)
     }
+
+    func navigateToWallets() {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "") as? UIViewController else {
+            return
+        }
+        present(mainRegistrationVC, animated: true, completion: nil)
+    }
+
 }
+
+
+
 
 //
 //    var quizes: UIButton =
