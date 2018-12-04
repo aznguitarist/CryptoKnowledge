@@ -27,8 +27,8 @@ class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
     @IBOutlet weak var choiceTwo: UIButton!
     @IBOutlet weak var choiceThree: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressMeterView: UIView!
+    @IBOutlet weak var progressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,6 +156,14 @@ class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
         questionNumber = 0
         score = 0
         nextQuestion()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
     }
     }
     

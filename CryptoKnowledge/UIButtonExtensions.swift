@@ -25,20 +25,20 @@ extension UIButton {
     }
     
     func flash() {
-        let flash = CABasicAnimation(keyPath: "Opacity")
+        let flash = CABasicAnimation(keyPath: "opacity")
         flash.duration = 1
         flash.fromValue = 1
         flash.toValue = 0.1
         flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         flash.autoreverses = true
-        flash.repeatCount = 3
+        flash.repeatCount = 2
         layer.add(flash, forKey: nil)
     }
     
     func shake() {
-        let shake = CABasicAnimation(keyPath: "Position")
+        let shake = CABasicAnimation(keyPath: "position")
         shake.duration = 1
-        shake.repeatCount = 3
+        shake.repeatCount = 2
         shake.autoreverses = true
         let fromPoint = CGPoint(x: center.x - 5, y: center.y)
         let fromValue = NSValue(cgPoint: fromPoint)

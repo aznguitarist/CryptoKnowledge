@@ -41,7 +41,12 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
       navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
       navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        view.pushTransitionBottom(1)
+        navigationController?.navigationBar.layer.shadowColor = UIColor.gray.cgColor
+        navigationController?.navigationBar.isTranslucent = true
+        
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
 //        view.addSubview(navBar)
 //        setNavigationBar()
         updateData()
@@ -49,21 +54,7 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
 
     }
     
-    func setNavigationBar() {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
-        let navItem = UINavigationItem(title: "Ripple")
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(done))
-//        navItem.rightBarButtonItem = doneItem
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Backin it up", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.lightGray
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
-       
-    }
+
     
     @objc func handleSegueToCryptoChoice(){
         performSegue(withIdentifier: "rippleBackToCoinChoice", sender: self)
@@ -160,6 +151,14 @@ class RippleViewController: UIViewController, AVAudioPlayerDelegate {
         nextQuestion()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
+    }
+    
 }
 
 

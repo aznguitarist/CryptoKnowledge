@@ -48,6 +48,11 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.iconContrastYellow]
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.barTintColor = Colors.iconDarkBlue
+        
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
         //       self.navigationController?.navigationBar.shadowImage = UIImage()
 //       self.navigationController?.navigationBar.isOpaque = true
 //       navigationController?.navigationBar.isTranslucent = true
@@ -66,19 +71,26 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     func createArray() -> [Coins] {
         let userScoresAndQuestNumb = UserDefaults.standard
         let cryptoScore = userScoresAndQuestNumb.integer(forKey: "score")
+        let cryptoProgress = userScoresAndQuestNumb.integer(forKey: "questionNumber")
         let btcScore = userScoresAndQuestNumb.integer(forKey: "BTC Score")
+        let btcProgress = userScoresAndQuestNumb.integer(forKey: "Btc Question Number")
         let etherScore = userScoresAndQuestNumb.integer(forKey: "Ether Score")
+        let etherProgress = userScoresAndQuestNumb.integer(forKey: "Ether QN")
         let rippleScore = userScoresAndQuestNumb.integer(forKey: "Ripple Score")
+        let rippleProgress = userScoresAndQuestNumb.integer(forKey: "Ripple QN")
         let moneroScore = userScoresAndQuestNumb.integer(forKey: "Monero Score")
+        let moneroProgress = userScoresAndQuestNumb.integer(forKey: "Monero QN")
         let tetherScore = userScoresAndQuestNumb.integer(forKey: "Tether Score")
+        let tetherProgress = userScoresAndQuestNumb.integer(forKey: "Tether QN")
+        
         var tempCoins: [Coins] = []
         
-        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Blockchain", progress: "Score: \(cryptoScore)" , controller: "CryptoViewController")
-        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", progress: "Score: \(btcScore)", controller: "BtcViewController")
-        let coin3 = Coins(image: UIImage(named: "Ethereuma")!, name: "Ethereum", progress: "Score: \(etherScore)", controller: "EthereumViewController")
-        let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore)", controller: "RippleViewController" )
-        let coin5 = Coins(image: UIImage(named: "monerosmall")!, name: "Monero", progress: "Score: \(moneroScore)", controller: "MoneroViewController")
-        let coin6 = Coins(image: UIImage(named: "tether")!, name: "Tether", progress: "Score: \(tetherScore)", controller: "TetherViewController")
+        let coin1 = Coins(image: UIImage(named: "cryptoquiz coin")!, name: "Blockchain", progress: "Score: \(cryptoScore) Progress: \(cryptoProgress)/25" , controller: "CryptoViewController")
+        let coin2 = Coins(image: UIImage(named: "bitcoin")!, name: "Bitcoin", progress: "Score: \(btcScore) Progress: \(btcProgress)/25", controller: "BtcViewController")
+        let coin3 = Coins(image: UIImage(named: "Ethereuma")!, name: "Ethereum", progress: "Score: \(etherScore) Progress: \(etherProgress)/25", controller: "EthereumViewController")
+        let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore) Progress: \(rippleProgress)/25", controller: "RippleViewController" )
+        let coin5 = Coins(image: UIImage(named: "monerosmall")!, name: "Monero", progress: "Score: \(moneroScore) Progress: \(moneroProgress)/25", controller: "MoneroViewController")
+        let coin6 = Coins(image: UIImage(named: "tether")!, name: "Tether", progress: "Score: \(tetherScore) Progress: \(tetherProgress)/16", controller: "TetherViewController")
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
         
 

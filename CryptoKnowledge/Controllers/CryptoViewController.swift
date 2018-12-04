@@ -41,25 +41,23 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         self.title = "Blockchain"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:Colors.blue]
         
-        progressBarView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        progressBarView.frame.size.width = (view.frame.size.width/25)  * CGFloat(questionNumber + 1)
-        progressBarView.layer.cornerRadius = 9
-        
-        
-        choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
-        choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
-        choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
+  
       
         view.pushTransitionLeft(1)
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
+      self.navigationController?.navigationBar.isTranslucent = true
 //       self.navigationController?.view.backgroundColor = .clear
 //        self.navigationItem.backBarButtonItem?.title = "Try Again"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector (handleCoinSelectionOut))
         navigationItem.leftBarButtonItem?.tintColor = Colors.blue
+        
+        navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
   
     }
     
@@ -152,6 +150,15 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
     
     func update(){
         
+        progressBarView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        progressBarView.frame.size.width = (view.frame.size.width/25)  * CGFloat(questionNumber + 1)
+        progressBarView.layer.cornerRadius = 9
+        
+        
+        choiceOne.titleLabel?.textAlignment = NSTextAlignment.center
+        choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
+        choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
+        
         let nextQuest = questionList.cryptoBank[questionNumber]
         questionViewer.text = nextQuest.question
         questionViewer.pushTransitionTop(2)
@@ -168,4 +175,14 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         score = 0
         questionNumber = 0
         update() 
-    }}
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
+    }
+    }
+

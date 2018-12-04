@@ -52,7 +52,7 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+      
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
         
@@ -157,5 +157,13 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
         questionNumber = 0
         score = 0
         nextQuestion()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
     }
 }

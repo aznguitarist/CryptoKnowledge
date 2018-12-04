@@ -21,42 +21,56 @@ class MenuViewController: UIViewController{
         super.viewDidLoad()
        
   
-        view.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: Colors.blackPurple)
+//        view.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: UIColor.black)
 //        view.setGradientBackground5(oneColor: UIColor.gray, twoColor: UIColor.blue, threeColor: UIColor.gray)
         title = "Menu"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector (backToLogIn))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.purple
-       navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0)
+        view.backgroundColor = Colors.iconDarkBlue
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.iconContrastYellow
+        ]
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.layer.shadowColor = UIColor.purple.cgColor
-        navigationController?.navigationBar.layer.shadowOpacity = 0.3
+        navigationController?.navigationBar.isOpaque = true
+        navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.1)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector (backToLogIn))
+        navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
+//        navigationController?.navigationBar.barTintColor = UIColor.clear.withAlphaComponent(0.5)
+      navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
         navigationController?.navigationBar.layer.shadowRadius = 5
-        navigationController?.navigationBar.layer.shadowOffset.height = 10
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
-        quizesButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        quizesButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         quizesButton.setTitle("Quizes", for: .normal)
-        quizesButton.layer.cornerRadius = quizesButton.bounds.size.height/2
+        quizesButton.setTitleColor(Colors.iconContrastYellow, for: .normal)
+    
+        
+//        quizesButton.layer.cornerRadius = quizesButton.bounds.size.height/2
 
-        walletsButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        walletsButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        walletsButton.setTitleColor(Colors.iconContrastYellow, for: .normal)
         walletsButton.setTitle("Wallets", for: .normal)
-        walletsButton.layer.cornerRadius = walletsButton.bounds.size.height/2
+       
+//        walletsButton.layer.cornerRadius = walletsButton.bounds.size.height/2
         
     }
   
    
     @IBAction func quizzesTapped(_ sender: Any) {
         quizesButton.pulsate()
-        quizesButton.shake()
         
        navigateToQuizes()
        
     }
     
     @IBAction func walletsTapped(_ sender: Any) {
-        walletsButton.shake()
-        navigateToWallets()
+        walletsButton.pulsate()
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+           self.performSegue(withIdentifier: "walletsSegue", sender: self)
+        }
+        
     }
     
 
@@ -85,7 +99,7 @@ func navigateToQuizes() {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "") as? UIViewController else {
+        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "wallets") as? UIViewController else {
             return
         }
         present(mainRegistrationVC, animated: true, completion: nil)

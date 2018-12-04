@@ -54,6 +54,11 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.gray
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.gray]
+        
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.isOpaque = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
         view.pushTransitionTop(1)
     }
     
@@ -159,6 +164,12 @@ class EthereumViewController: UIViewController, AVAudioPlayerDelegate {
         nextQuestion()
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
+    }
     
 }

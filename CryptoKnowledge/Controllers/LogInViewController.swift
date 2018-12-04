@@ -17,13 +17,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
     
     var player = AVAudioPlayer()
     
-    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
                 alert.show()
 
             }else{
+                self.logInButton.flash()
                 SVProgressHUD.dismiss()
                 print("Login Successfull")
                 self.navigateToChoice()

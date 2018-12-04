@@ -14,7 +14,12 @@ class MainNavigationController : UINavigationController {
         super.viewDidLoad()
         
         navigateToChoice()
-        
+        navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
+        navigationController?.navigationItem.leftBarButtonItem?.tintColor = Colors.iconContrastYellow
+        navigationController?.navigationBar.layer.shadowColor = Colors.iconContrastYellow.cgColor
+        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        navigationController?.navigationBar.layer.shadowRadius = 5
+        navigationController?.navigationBar.layer.shadowOffset.height = 5
         }
         
     func navigateToChoice () {
