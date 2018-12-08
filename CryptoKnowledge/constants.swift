@@ -35,5 +35,8 @@ struct Colors {
      static let iconMenuBlue = UIColor(red: 18.0/255.0, green: 49.0/255.0, blue: 85.0/255.0, alpha: 0.5)
     
     static let tetherTurquoise = UIColor(red: 38.0/255.0, green: 162.0/255.0, blue: 123.0/255.0, alpha: 1)
+    
+    
+    static let dashBlue = UIColor(red: 28.0/255.0, green: 117.0/255.0, blue: 188.0/255.0, alpha: 1)
 }
 

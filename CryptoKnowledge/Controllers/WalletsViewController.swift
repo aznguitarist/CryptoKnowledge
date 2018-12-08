@@ -17,7 +17,7 @@ class WalletsViewController: UITableViewController {
     var walletSections = ["Hard", "Apple", "Android", "Web", "Paper"]
     var typesOfWallets = ["Hardware", "IOS", "Android", "Web", "Paper"]
     
-    let urlArray = ["https://www.ledger.com/", "https://trezor.io/","https://www.keepkey.com/","https://brd.com/","http://www.sollico.com/bitwallet/", "https://jaxx.io/downloads.html","https://wallet.mycelium.com/","https://www.coinomi.com/en/","https://edge.app/","https://www.blockchain.com/explorer","https://pro.coinbase.com/","https://gemini.com/", "https://www.bitaddress.org","https://bitcoinpaperwallet.com/"]
+    let urlArray = [["https://www.ledger.com/", "https://trezor.io/","https://www.keepkey.com/"],["https://brd.com/","http://www.sollico.com/bitwallet/", "https://jaxx.io/downloads.html"],["https://wallet.mycelium.com/","https://www.coinomi.com/en/","https://edge.app/"],["https://www.blockchain.com/explorer","https://pro.coinbase.com/","https://gemini.com/"], ["https://www.bitaddress.org","https://bitcoinpaperwallet.com/"]]
    
     
     var twoDimensionalArray = [["Ledger", "Trezor", "Keepkey"],["BRD(bread)", "Bitwallet", "Jaxx"],["Mycellium", "Coinomi", "Airbitz"], ["Blockchain.info", "Coinbase","Gemini"],["Bitaddress","Bitcoinpaperwallet"]]
@@ -80,13 +80,12 @@ class WalletsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let urlString = self.urlArray[indexPath.row]
+        let urlString = self.urlArray[indexPath.section][indexPath.row]
         if let url = URL(string: urlString)
         {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
     
     func handleledger(){
         if let url = NSURL(string: "https://www.google.com/")
@@ -95,6 +94,11 @@ class WalletsViewController: UITableViewController {
         }
         
     }
+    
+//
+//    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//    let newViewController = LedgerWalletViewController()
+//    self.navigationController?.pushViewController(newViewController, animated: true)
     
     override func viewWillDisappear(_ animated: Bool) {
        navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.1)

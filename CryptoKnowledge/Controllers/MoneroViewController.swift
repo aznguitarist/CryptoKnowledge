@@ -50,12 +50,26 @@ class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleSegueToCryptoChoice))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black
         
+     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layer.shadowColor = UIColor.darkGray.cgColor
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
-      
+        
+        choiceOne.layer.cornerRadius = 10
+        choiceOne.backgroundColor = UIColor.darkGray
+        
+        choiceTwo.layer.cornerRadius = 10
+        choiceTwo.backgroundColor = UIColor.darkGray
+        
+        choiceThree.layer.cornerRadius = 10
+        choiceThree.backgroundColor = UIColor.darkGray
     }
     
     

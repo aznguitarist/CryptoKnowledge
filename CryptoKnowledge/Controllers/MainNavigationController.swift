@@ -21,7 +21,14 @@ class MainNavigationController : UINavigationController {
         navigationController?.navigationBar.layer.shadowRadius = 5
         navigationController?.navigationBar.layer.shadowOffset.height = 5
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isTranslucent = true
+       
+        navigationController?.navigationBar.backgroundColor = UIColor.green.withAlphaComponent(0.5)
         
+    }
     func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         

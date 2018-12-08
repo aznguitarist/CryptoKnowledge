@@ -35,9 +35,8 @@ extension UIView {
     func setGradientBackground2(oneColor: UIColor, twoColor: UIColor){
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-
         gradientLayer.colors = [oneColor.cgColor, twoColor.cgColor]
-        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.locations = [0.0, 0.5]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.frame = gradientLayer.bounds
@@ -64,8 +63,8 @@ extension UIView {
         
         gradientLayer.colors = [oneColor.cgColor, twoColor.cgColor, threeColor.cgColor]
         gradientLayer.locations = [0.0, 0.5, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradientLayer.frame = gradientLayer.bounds
         
         layer.insertSublayer(gradientLayer, at: 0)
@@ -96,8 +95,52 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
 }
 
-    func gradient(){
+    func gradientEos(oneColor: UIColor, twoColor: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [oneColor.cgColor, twoColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = bounds
         
+        layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+    
+    func navGradientDash(oneColor: UIColor, twoColor: UIColor, threeColor: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [oneColor.cgColor, twoColor.cgColor, threeColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0.2, 0.5, 0.8]
+        gradientLayer.frame = bounds
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+    
+    func setGradientBackgroundEOS(oneColor: UIColor, twoColor: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        
+        gradientLayer.colors = [oneColor.cgColor, twoColor.cgColor]
+        gradientLayer.locations = [0.0, 0.85]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.frame = gradientLayer.bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func setGradientBackgroundDash(){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        
+        gradientLayer.colors = [Colors.dashBlue.cgColor, UIColor.lightGray.cgColor, Colors.dashBlue.cgColor]
+        gradientLayer.locations = [0.3, 0.6,0.8]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.frame = gradientLayer.bounds
+        layer.insertSublayer(gradientLayer, at: 0)
     }
     
 }

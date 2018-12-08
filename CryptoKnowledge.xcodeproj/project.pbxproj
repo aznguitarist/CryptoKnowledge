@@ -11,7 +11,7 @@
 		D41A799A217E4CEA003F073A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A7999217E4CEA003F073A /* RegistrationViewController.swift */; };
 		D41D4FCC21B06D0200776D5E /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCB21B06D0200776D5E /* animations.swift */; };
 		D41D4FCE21B0BDE200776D5E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */; };
-		D41D4FD021B0EBB600776D5E /* NavBarGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCF21B0EBB600776D5E /* NavBarGradient.swift */; };
+		D41D4FD021B0EBB600776D5E /* MNGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FCF21B0EBB600776D5E /* MNGradient.swift */; };
 		D41D4FD221B19D7300776D5E /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FD121B19D7300776D5E /* UIButtonExtensions.swift */; };
 		D41D4FD421B1E12300776D5E /* FirstMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */; };
 		D439297621925A64004C3B6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D439297521925A63004C3B6A /* User.swift */; };
@@ -19,10 +19,15 @@
 		D43A4238218370A800B16B20 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A4237218370A800B16B20 /* CryptoViewController.swift */; };
 		D43A423A2183750E00B16B20 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A42392183750E00B16B20 /* GradientBackground.swift */; };
 		D43A423C218377CC00B16B20 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A423B218377CC00B16B20 /* constants.swift */; };
+		D4415BE121B61E85009CB803 /* EOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4415BE021B61E85009CB803 /* EOSViewController.swift */; };
+		D4415BE321B7682E009CB803 /* EOSBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4415BE221B7682E009CB803 /* EOSBank.swift */; };
+		D447677921B81D72004F4598 /* DashBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D447677821B81D72004F4598 /* DashBank.swift */; };
+		D447679C21B82E2A004F4598 /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D447679B21B82E2A004F4598 /* DashViewController.swift */; };
 		D44C9BF7218774C600B4A025 /* CoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C9BF6218774C600B4A025 /* CoinList.swift */; };
 		D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1CE217994A2006E1D64 /* LogInViewController.swift */; };
 		D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */; };
 		D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */; };
+		D46AE63321BA2BF6001A3EC4 /* CardanoBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */; };
 		D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD552177D4F10056D396 /* AppDelegate.swift */; };
 		D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD592177D4F10056D396 /* Main.storyboard */; };
 		D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */; };
@@ -58,7 +63,7 @@
 		D41A7999217E4CEA003F073A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		D41D4FCB21B06D0200776D5E /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D41D4FCF21B0EBB600776D5E /* NavBarGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarGradient.swift; sourceTree = "<group>"; };
+		D41D4FCF21B0EBB600776D5E /* MNGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNGradient.swift; sourceTree = "<group>"; };
 		D41D4FD121B19D7300776D5E /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainNavigationController.swift; sourceTree = "<group>"; };
 		D439297521925A63004C3B6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -66,10 +71,15 @@
 		D43A4237218370A800B16B20 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		D43A42392183750E00B16B20 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		D43A423B218377CC00B16B20 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		D4415BE021B61E85009CB803 /* EOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSViewController.swift; sourceTree = "<group>"; };
+		D4415BE221B7682E009CB803 /* EOSBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSBank.swift; sourceTree = "<group>"; };
+		D447677821B81D72004F4598 /* DashBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBank.swift; sourceTree = "<group>"; };
+		D447679B21B82E2A004F4598 /* DashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
 		D44C9BF6218774C600B4A025 /* CoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinList.swift; sourceTree = "<group>"; };
 		D45DA1CE217994A2006E1D64 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardanoBank.swift; sourceTree = "<group>"; };
 		D471BD522177D4F10056D396 /* CryptoKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471BD552177D4F10056D396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D471BD5A2177D4F10056D396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,7 +169,7 @@
 				D44C9BF6218774C600B4A025 /* CoinList.swift */,
 				D43A423B218377CC00B16B20 /* constants.swift */,
 				D43A42392183750E00B16B20 /* GradientBackground.swift */,
-				D41D4FCF21B0EBB600776D5E /* NavBarGradient.swift */,
+				D41D4FCF21B0EBB600776D5E /* MNGradient.swift */,
 				D41D4FD121B19D7300776D5E /* UIButtonExtensions.swift */,
 				D41D4FCB21B06D0200776D5E /* animations.swift */,
 				D4BE6D8B21823B7F00B3F8B5 /* Models */,
@@ -180,9 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				D471BD552177D4F10056D396 /* AppDelegate.swift */,
+				D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */,
 				D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */,
 				D45DA1CE217994A2006E1D64 /* LogInViewController.swift */,
-				D41D4FD321B1E12300776D5E /* FirstMainNavigationController.swift */,
 				D41A7999217E4CEA003F073A /* RegistrationViewController.swift */,
 				D41D4FCD21B0BDE200776D5E /* MenuViewController.swift */,
 				D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */,
@@ -192,6 +202,8 @@
 				D471BD6C2177F2B40056D396 /* EthereumViewController.swift */,
 				D48986D621AED36900FC8FB5 /* MoneroViewController.swift */,
 				D49EF1BB21B1F82600AE8749 /* TetherViewController.swift */,
+				D4415BE021B61E85009CB803 /* EOSViewController.swift */,
+				D447679B21B82E2A004F4598 /* DashViewController.swift */,
 				D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */,
 				D49EF1C521B3294700AE8749 /* LedgerWalletViewController.swift */,
 			);
@@ -203,11 +215,14 @@
 			children = (
 				D43A423521836D4600B16B20 /* CryptoQuestionBank.swift */,
 				D471BD71217800140056D396 /* BitcoinBank .swift */,
-				D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */,
 				D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */,
+				D49C3E8F219B6CD000A56DB8 /* RippleBank.swift */,
 				D48986D821AEE43100FC8FB5 /* MoneroBank.swift */,
+				D4415BE221B7682E009CB803 /* EOSBank.swift */,
+				D447677821B81D72004F4598 /* DashBank.swift */,
 				D471BD6E2177F9280056D396 /* Questions.swift */,
 				D49EF1BD21B1F96500AE8749 /* TetherBank.swift */,
+				D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */,
 				D439297521925A63004C3B6A /* User.swift */,
 			);
 			path = Models;
@@ -357,7 +372,10 @@
 				D41D4FCC21B06D0200776D5E /* animations.swift in Sources */,
 				D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */,
 				D439297621925A64004C3B6A /* User.swift in Sources */,
+				D4415BE321B7682E009CB803 /* EOSBank.swift in Sources */,
+				D447679C21B82E2A004F4598 /* DashViewController.swift in Sources */,
 				D43A4238218370A800B16B20 /* CryptoViewController.swift in Sources */,
+				D46AE63321BA2BF6001A3EC4 /* CardanoBank.swift in Sources */,
 				D4C6E23621876F1E002A3564 /* CryptoCellTableViewCell.swift in Sources */,
 				D41D4FD421B1E12300776D5E /* FirstMainNavigationController.swift in Sources */,
 				D49EF1C621B3294700AE8749 /* LedgerWalletViewController.swift in Sources */,
@@ -375,10 +393,12 @@
 				D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */,
 				D49EF1BE21B1F96500AE8749 /* TetherBank.swift in Sources */,
 				D471BD6F2177F9280056D396 /* Questions.swift in Sources */,
-				D41D4FD021B0EBB600776D5E /* NavBarGradient.swift in Sources */,
+				D41D4FD021B0EBB600776D5E /* MNGradient.swift in Sources */,
 				D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */,
 				D471BD6B2177F1A80056D396 /* BtcViewController.swift in Sources */,
 				D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */,
+				D4415BE121B61E85009CB803 /* EOSViewController.swift in Sources */,
+				D447677921B81D72004F4598 /* DashBank.swift in Sources */,
 				D49C3E90219B6CD000A56DB8 /* RippleBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

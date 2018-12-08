@@ -58,7 +58,6 @@ class CryptoViewController: UIViewController, AVAudioPlayerDelegate {
         navigationController?.navigationBar.layer.shadowOpacity = 0.8
         navigationController?.navigationBar.layer.shadowRadius = 5
         navigationController?.navigationBar.layer.shadowOffset.height = 5
-  
     }
     
     @objc func handleCoinSelectionOut(){

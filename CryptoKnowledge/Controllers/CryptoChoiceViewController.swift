@@ -13,7 +13,7 @@ import Firebase
 class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     var coins: [Coins] = []
-    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","moneroSegue","rippleSegue","toTether"]
+    var segueIdentifiers = ["cryptoquiz","bitcoin","ethereum","moneroSegue","rippleSegue","toTether","eosSegue","dashSegue"]
     let navItem = UINavigationItem()
     var cryptoScore = ""
     var btcScore = ""
@@ -21,7 +21,8 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     var rippleScore = ""
     var moneroScore = ""
     var tetherScore = ""
-    
+    var eosScore = ""
+    var dashScore = ""
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -56,6 +57,7 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         //       self.navigationController?.navigationBar.shadowImage = UIImage()
 //       self.navigationController?.navigationBar.isOpaque = true
 //       navigationController?.navigationBar.isTranslucent = true
+    
 
         tableView.backgroundColor = Colors.iconDarkBlue
         
@@ -82,6 +84,11 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         let moneroProgress = userScoresAndQuestNumb.integer(forKey: "Monero QN")
         let tetherScore = userScoresAndQuestNumb.integer(forKey: "Tether Score")
         let tetherProgress = userScoresAndQuestNumb.integer(forKey: "Tether QN")
+        let eosScore = userScoresAndQuestNumb.integer(forKey: "EOS QN")
+        let eosProgress = userScoresAndQuestNumb.integer(forKey: "EOS Score")
+        let dashScore = userScoresAndQuestNumb.integer(forKey: "Dash Score")
+        let dashProgress = userScoresAndQuestNumb.integer(forKey: "Dash QN")
+        
         
         var tempCoins: [Coins] = []
         
@@ -91,6 +98,8 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         let coin4 = Coins(image: UIImage(named: "ripple")!, name: "Ripple", progress: "Score: \(rippleScore) Progress: \(rippleProgress)/25", controller: "RippleViewController" )
         let coin5 = Coins(image: UIImage(named: "monerosmall")!, name: "Monero", progress: "Score: \(moneroScore) Progress: \(moneroProgress)/25", controller: "MoneroViewController")
         let coin6 = Coins(image: UIImage(named: "tether")!, name: "Tether", progress: "Score: \(tetherScore) Progress: \(tetherProgress)/16", controller: "TetherViewController")
+        let coin7 = Coins(image: UIImage(named: "eoscoin")!, name: "EOS", progress: "Score: \(eosScore) Progress: \(eosProgress)/10", controller: "EOSViewController")
+        let coin8 = Coins(image: UIImage(named: "dash copy")!, name: "Dash", progress: "Score: \(dashScore) Prgress: \(dashProgress)/26", controller: "DashViewController")
 //        let coin5 = Coins(image: UIImage(named: "litecoin")!, name: "Litcoin")
         
 
@@ -100,6 +109,8 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
         tempCoins.append(coin5)
         tempCoins.append(coin4)
         tempCoins.append(coin6)
+        tempCoins.append(coin7)
+        tempCoins.append(coin8)
         
         tableView.reloadData()
         return tempCoins
@@ -132,7 +143,22 @@ class CryptoChoiceViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)    }
+        
+        if segueIdentifiers[indexPath.row] == "eosSegue" {
+            let eosVC = EOSViewController()
+            present(eosVC, animated: true, completion: nil)
+        }
+        else if segueIdentifiers[indexPath.row] == "dashSegue"{
+            let dashVC = DashViewController()
+            present(dashVC, animated: true, completion: nil)
+        }
+        else{
+        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)
+        }
+    }
+   
+    
+      }
 
-}
+  
 

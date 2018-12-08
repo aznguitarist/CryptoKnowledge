@@ -37,7 +37,7 @@ class MenuViewController: UIViewController{
         navigationController?.navigationBar.layer.shadowOpacity = 0.8
         navigationController?.navigationBar.layer.shadowRadius = 5
         navigationController?.navigationBar.layer.shadowOffset.height = 5
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
         quizesButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         quizesButton.setTitle("Quizes", for: .normal)
