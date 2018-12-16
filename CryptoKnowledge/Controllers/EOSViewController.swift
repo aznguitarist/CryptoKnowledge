@@ -239,9 +239,12 @@ class EOSViewController: UIViewController, AVAudioPlayerDelegate {
         
     
         navBarView.gradientEos(oneColor: UIColor.darkGray, twoColor: UIColor.lightGray)
+        
+        questionLabel.textAlignment = .center
+        
 //        progressUI.setGradientBackground4(oneColor: UIColor.black, twoColor: UIColor.white, threeColor: UIColor.black)
         let gradientImage = UIImage.gradientImage(with: progressUI.frame,
-                                                  colors: [UIColor.black.withAlphaComponent(0.8).cgColor, UIColor.lightGray.cgColor],
+                                                  colors: [UIColor.gray.withAlphaComponent(0.8).cgColor, UIColor.white.cgColor],
                                                   locations: nil)
     
         progressUI.progressImage = gradientImage!
@@ -316,9 +319,7 @@ class EOSViewController: UIViewController, AVAudioPlayerDelegate {
         //        present(coinChoice, animated: true, completion: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? UIViewController else {
-            return
-        }
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController")
         present(mainRegistrationVC, animated: true, completion: nil)
     }
 
@@ -426,9 +427,10 @@ class EOSViewController: UIViewController, AVAudioPlayerDelegate {
         questionLabel.topAnchor.constraint(equalTo: navBarView.bottomAnchor, constant: 10).isActive = true
         questionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         questionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        questionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        questionLabel.bottomAnchor.constraint(equalTo: choiceOne.topAnchor, constant: -10).isActive = true
         
-        choiceOne.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 15).isActive = true
+        
+        choiceOne.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true 
         choiceOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         choiceOne.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         choiceOne.heightAnchor.constraint(equalToConstant: 75).isActive = true

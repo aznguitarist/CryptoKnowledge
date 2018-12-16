@@ -42,7 +42,7 @@ class EQBank {
         EqBank.append(Questions(quest: "What are transaction fees refered to as?", c1: "Cost", c2: "Liabilities", c3: "Gas", ans: 3))
         EqBank.append(Questions(quest: "What are Gas units measured in?", c1: "Gwei", c2: "Ounces", c3: "Fuel", ans: 1))
         EqBank.append(Questions(quest: "As of June 2018, What was the estimated supply of Ether?",c1: "100,000,000", c2: "200,000,000", c3: "300,000,000", ans: 1))
-        EqBank.append(Questions(quest: "As of now, what is the cap set at on the amount of Ether that will be created", c1: "1 Billion", c2: "100 Billion", c3: "No Cap", ans: 3))
+        EqBank.append(Questions(quest: "As of now, what is the cap set at on the amount of Ether that will be created?", c1: "1 Billion", c2: "100 Billion", c3: "No Cap", ans: 3))
         EqBank.append(Questions(quest: "What are Ethereum's smart contracts based on?", c1: "C+", c2: "Swift", c3: "Different programming languages", ans: 3))
         EqBank.append(Questions(quest: "Ethereum is written in what language?", c1: "Turning", c2: "Python", c3: "Java", ans: 1))
     }

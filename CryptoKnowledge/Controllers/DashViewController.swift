@@ -22,12 +22,9 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
     var wrongNoise = AVAudioPlayer()
     var progressValue = 0.0
     
-    
-    
     // TODO: View Setup
     let navBarView: UIView = {
         let navBar = UIView()
-      
         navBar.translatesAutoresizingMaskIntoConstraints = false
         navBar.layer.masksToBounds = true
         //        navBar.gradientEos(oneColor: UIColor.lightGray, twoColor: UIColor.blue)
@@ -58,6 +55,8 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
         label.font = label.font.withSize(20)
         return label
     }()
+    
+    // TODO: Views List
     
     let questionLabel: UILabel = {
         let label = UILabel()
@@ -233,8 +232,6 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
         navGradient.endPoint = CGPoint(x: 0.0, y: 1.0)
         view.layer.insertSublayer(navGradient, at: 0)
         
-   
-        
         let gradient = CAGradientLayer()
             gradient.frame = questionLabel.frame
             gradient.colors = [UIColor.darkGray.cgColor, UIColor.lightGray.cgColor, UIColor.darkGray.cgColor]
@@ -290,14 +287,10 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
         nextQuestion()
     }
     
-    @objc func back() { // remove @objc for Swift 3
-        //        let coinChoice = CryptoChoiceViewController()
-        //        present(coinChoice, animated: true, completion: nil)
+    @objc func back() { 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? UIViewController else {
-            return
-        }
+       let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") 
         present(mainRegistrationVC, animated: true, completion: nil)
     }
     
@@ -412,9 +405,9 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
         questionLabel.topAnchor.constraint(equalTo: navBarView.bottomAnchor, constant: 10).isActive = true
         questionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         questionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        questionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        questionLabel.bottomAnchor.constraint(equalTo: choiceOne.topAnchor, constant: -10).isActive = true 
         
-        choiceOne.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 15).isActive = true
+        choiceOne.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
         choiceOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         choiceOne.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         choiceOne.heightAnchor.constraint(equalToConstant: 75).isActive = true
@@ -428,12 +421,7 @@ class DashViewController: UIViewController, AVAudioPlayerDelegate {
         choiceThree.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         choiceThree.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         choiceThree.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        
-        //        progressView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        //        progressView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        //        progressView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        //        progressView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        //        progressView.frame.size.width = (view.frame.size.width/25) * CGFloat(questionNumber + 1)
+
         
         questionNumberLabel.bottomAnchor.constraint(equalTo: progressUI.topAnchor, constant: -5).isActive = true
         questionNumberLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5).isActive = true

@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
         super.viewDidLoad()
         
 //        logInButton.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: Colors.iconDarkPurple)
-        logInButton.layer.cornerRadius = 10
+       
         
         do {
             let audioPlayer = Bundle.main.url(forResource: "Dee_Yan-Key_-_06_-_Sweet_Silence", withExtension: "mp3")
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
         view.setGradientBackground(oneColor: Colors.iconDarkBlue, twoColor: UIColor.black)
         player.play()
         
-        userNameTextField.placeholder = "Username"
+         userNameTextField.placeholder = "Username"
         passwordTextField.placeholder = "Password"
         
         self.userNameTextField.delegate = self
@@ -50,16 +50,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
         for (key, value) in userDefaultDict {
             print("\(key) = \(value) \n")
         }
-        
-        
-        
     }
-    
-    
     
     @IBAction func registerTapped(_ sender: Any) {
         navigateToRegistration()
-        
     }
     
     @IBAction func logInPressed(_ sender: Any) {
@@ -71,8 +65,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
             if error != nil {
                 print(error!)
                 SVProgressHUD.dismiss()
-                let alert = UIAlertView(title: "Invalid", message: "Try again", delegate: self, cancelButtonTitle: "Ok")
-                alert.show()
+                let alert = UIAlertController(title: "Invalid", message: "Try again", preferredStyle: UIAlertController.Style.alert)
+                let menuVC = MenuViewController()
+                alert.show(menuVC, sender: self)
 
             }else{
                 self.logInButton.flash()
@@ -96,18 +91,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerD
     private func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "FirstMainNavigationController") as? UIViewController else {
-            return
-        }
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "FirstMainNavigationController")
         present(mainRegistrationVC, animated: true, completion: nil)
     }
     
     private func navigateToRegistration () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Registration") as? UIViewController else {
-            return
-        }
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Registration") 
         present(mainRegistrationVC, animated: true, completion: nil)
     }
     

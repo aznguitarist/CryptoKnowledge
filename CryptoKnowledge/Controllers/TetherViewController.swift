@@ -28,6 +28,7 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
    
+    @IBOutlet weak var stackView: UIStackView!
     
     let previousQuestion: UIButton = {
         let button = UIButton()
@@ -85,12 +86,7 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
         choiceTwo.titleLabel?.textAlignment = NSTextAlignment.center
         choiceThree.titleLabel?.textAlignment = NSTextAlignment.center
       
-        view.addSubview(choiceOne)
-        view.addSubview(choiceTwo)
-        view.addSubview(choiceThree)
         view.addSubview(previousQuestion)
-        view.addSubview(scoreLabel)
-        view.addSubview(questionLabel)
         view.addSubview(progressUI)
         viewSetup()
         updateData()
@@ -104,12 +100,12 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
      
         
         let gradient = CAGradientLayer()
-        gradient.frame = questionLabel.frame
+        gradient.frame = questionLabel.bounds
         gradient.colors = [UIColor.darkGray.cgColor, UIColor.lightGray.cgColor, UIColor.darkGray.cgColor]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.1)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradient.cornerRadius = 10
-        view.layer.insertSublayer(gradient, at: 1)
+        stackView.layer.insertSublayer(gradient, at: 0)
         
         let firstGradientImage1 = UIImage.gradientImage1(with: choiceOne.frame, colors: [UIColor.darkGray.cgColor, UIColor.lightGray.cgColor,UIColor.darkGray.cgColor], locations: [0.66, 0.33])
         choiceOne.setBackgroundImage(firstGradientImage1, for: .normal)
@@ -232,94 +228,21 @@ class TetherViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
-//    func viewSetup() {
-//        NSLayoutConstraint.activate([
-//        questionLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-//        questionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-//        questionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-//        questionLabel.heightAnchor.constraint(equalToConstant: 250),
-//        choiceOne.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 15),
-//        choiceOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-//        choiceOne.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15), choiceOne.heightAnchor.constraint(equalToConstant: 75), choiceTwo.topAnchor.constraint(equalTo: choiceOne.bottomAnchor, constant: 10),
-//        choiceTwo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-//        choiceTwo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-//        choiceTwo.heightAnchor.constraint(equalToConstant: 75), choiceThree.topAnchor.constraint(equalTo: choiceTwo.bottomAnchor, constant: 10),
-//        choiceThree.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-//        choiceThree.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-//        choiceThree.heightAnchor.constraint(equalToConstant: 75),
-//        previousQuestion.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
-//        previousQuestion.bottomAnchor.constraint(equalTo: scoreLabel.topAnchor, constant: 5),
-//        previousQuestion.heightAnchor.constraint(equalToConstant: 30),
-//        previousQuestion.widthAnchor.constraint(equalToConstant: 100),
-//        scoreLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
-//        scoreLabel.bottomAnchor.constraint(equalTo: progressUI.topAnchor),
-//        scoreLabel.heightAnchor.constraint(equalToConstant: 30),
-//        scoreLabel.widthAnchor.constraint(equalToConstant: 150),
-//        progressUI.leftAnchor.constraint(equalTo: view.leftAnchor),
-//        progressUI.rightAnchor.constraint(equalTo: view.rightAnchor),
-//        progressUI.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//        progressUI.heightAnchor.constraint(equalToConstant: 40) ])
-//
-//    }
-    
     func viewSetup() {
-//
-//        questionLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-//        questionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-//        questionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-//        questionLabel.heightAnchor.constraint(equalToConstant: 250).isActive = true
-//        view.addSubview(questionLabel)
-
-
-//
-//        choiceOne.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 15).isActive = true
-//        choiceOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-//        choiceOne.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-//        choiceOne.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        view.addSubview(choiceOne)
-//
-//        choiceTwo.topAnchor.constraint(equalTo: choiceOne.bottomAnchor, constant: 10).isActive = true
-//        choiceTwo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-//        choiceTwo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-//        choiceTwo.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        view.addSubview(choiceTwo)
-//
-//        choiceThree.topAnchor.constraint(equalTo: choiceTwo.bottomAnchor, constant: 10).isActive = true
-//        choiceThree.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-//        choiceThree.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-//        choiceThree.heightAnchor.constraint(equalToConstant: 75).isActive = true
-//        view.addSubview(choiceThree)
-
-//        buttonStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
-//        buttonStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5).isActive = true
-//        buttonStack.heightAnchor.constraint(equalToConstant: 200).isActive = true
-//        buttonStack.bottomAnchor.constraint(equalTo: previousQuestion.topAnchor, constant: -10).isActive = true
-//        view.addSubview(buttonStack)
-
-
-        previousQuestion.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
-        previousQuestion.bottomAnchor.constraint(equalTo: scoreLabel.topAnchor, constant: 5).isActive = true
-        previousQuestion.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        previousQuestion.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        view.addSubview(questionLabel)
-
-//        scoreLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
-//        scoreLabel.bottomAnchor.constraint(equalTo: progressUI.topAnchor).isActive = true
-//        scoreLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//        scoreLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
-//        view.addSubview(scoreLabel)
-
         progressUI.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         progressUI.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         progressUI.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        progressUI.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        progressUI.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        
+        previousQuestion.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
+        previousQuestion.bottomAnchor.constraint(equalTo: scoreLabel.topAnchor, constant: -5).isActive = true
+        previousQuestion.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        previousQuestion.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        view.addSubview(previousQuestion)
         view.addSubview(progressUI)
-
     }
-    
 }
-
-
 
 // TODO: Gradient UIImage extension
 fileprivate extension UIImage {

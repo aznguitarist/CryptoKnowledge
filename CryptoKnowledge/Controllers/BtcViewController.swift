@@ -28,6 +28,8 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     @IBOutlet weak var choiceThree: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionNumberLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
+    
     
     let previousQuestion: UIButton = {
         let button = UIButton()
@@ -78,6 +80,8 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
         view.addSubview(previousQuestion)
         view.addSubview(progressUI)
         
+     
+        
         viewSetup()
         
         updateData()
@@ -100,8 +104,9 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     
     override func viewDidAppear(_ animated: Bool) {
         let navGradientImage = UIImage.gradientImageNav(with: CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: 64), colors: [UIColor.black.cgColor, UIColor.lightGray.cgColor,UIColor.black.cgColor], locations: [0.66, 0.33])
-        navigationController?.navigationBar.setBackgroundImage(navGradientImage, for: .default)
+            navigationController?.navigationBar.setBackgroundImage(navGradientImage, for: .default)
         
+        questionTextField.centerVertically() 
         
         let gradient = CAGradientLayer()
         gradient.frame = questionTextField.frame
@@ -109,7 +114,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
         gradient.startPoint = CGPoint(x: 0.0, y: 0.1)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradient.cornerRadius = 10
-        view.layer.insertSublayer(gradient, at: 1)
+        stackView.layer.insertSublayer(gradient, at: 0)
         
         let firstGradientImage1 = UIImage.gradientImage1(with: choiceOne.frame, colors: [UIColor.black.cgColor, UIColor.lightGray.cgColor,UIColor.black.cgColor], locations: [0.66, 0.33])
         choiceOne.setBackgroundImage(firstGradientImage1, for: .normal)
@@ -123,6 +128,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
         
         previousQuestion.setBackgroundImage(firstGradientImage1, for: .normal)
         scoreLabel.textAlignment = .left
+        questionNumberLabel.textAlignment = .left 
         
         
         let gradientImage = UIImage.gradientImage(with: progressUI.frame, colors: [UIColor.black.withAlphaComponent(0.25).cgColor,UIColor.lightGray.cgColor, UIColor.black.withAlphaComponent(0.25).cgColor], locations: [0.0,0.1,0.5])
@@ -140,7 +146,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as? CryptoChoiceViewController
+        let vc = segue.destination as? CryptoChoiceViewController
         vc?.btcScore = "\(score)"
     }
     
@@ -199,8 +205,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
             do{
                 let avPlayer2 = Bundle.main.url(forResource: "basswronganswer", withExtension: "wav")
             wrongNoise = try AVAudioPlayer(contentsOf: avPlayer2!)
-            }catch{"Error with audio"}
-            
+            }catch{print("Error with audio")}
             print("Try again")
             wrongNoise.play() 
         }
@@ -208,14 +213,13 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
   
     func updateData() {
          let nextQuest = questionList.questionBank[questionNumber]
-        questionNumberLabel.text = " Question \(questionNumber + 1)/ 25"
+        questionNumberLabel.text = " Question: \(questionNumber + 1)/ 25"
         scoreLabel.text = "Score: \(score)"
         questionTextField.text = nextQuest.question
         choiceOne.setTitle(nextQuest.choice1, for: .normal)
         choiceTwo.setTitle(nextQuest.choice2, for: .normal)
         choiceThree.setTitle(nextQuest.choice3, for: .normal)
         questionTextField.pushTransitionTop(1)
-        questionNumberLabel.pushTransitionRight(1)
         updateProgress() 
          updateFirebase()
     }
@@ -253,8 +257,8 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
     func viewSetup() {
         
         previousQuestion.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
-        previousQuestion.bottomAnchor.constraint(equalTo: scoreLabel.topAnchor, constant: -10).isActive = true
-        previousQuestion.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        previousQuestion.bottomAnchor.constraint(equalTo: scoreLabel.topAnchor, constant: -5).isActive = true
+        previousQuestion.topAnchor.constraint(equalTo: choiceThree.bottomAnchor, constant: 10).isActive = true
         previousQuestion.widthAnchor.constraint(equalToConstant: 100).isActive = true
         view.addSubview(previousQuestion)
         
@@ -262,7 +266,7 @@ class BtcViewController: UIViewController, AVAudioPlayerDelegate  {
         progressUI.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         progressUI.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         progressUI.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        progressUI.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        progressUI.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         view.addSubview(previousQuestion)
         view.addSubview(progressUI)
@@ -350,10 +354,8 @@ fileprivate extension UIImage {
         gradientLayer.frame = bounds
         gradientLayer.colors = colors
         // This makes it horizontal
-        gradientLayer.startPoint = CGPoint(x: 1.0,
-                                           y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0,
-                                         y: 1.0)
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         
         UIGraphicsBeginImageContext(gradientLayer.bounds.size)
         gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
@@ -361,5 +363,5 @@ fileprivate extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
-    
 }
+

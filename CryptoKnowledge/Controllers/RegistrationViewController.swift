@@ -41,15 +41,17 @@ class RegistrationViewController: UIViewController {
     }()
     
     @objc func backButtonTapped(){
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
-            return
-        }
+//        let loginController = LoginViewController()
+//        present(loginController, animated: true, completion: nil)
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
         present(mainRegistrationVC, animated: true, completion: nil)
     }
-    
-    
+
     func backButtonPlacement(){
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
@@ -97,12 +99,10 @@ class RegistrationViewController: UIViewController {
         
     }
     
-    private func goBacktoLogin () {
+func goBacktoLogin () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? UIViewController else {
-            return
-        }
+       let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") 
         present(mainRegistrationVC, animated: true, completion: nil)
     }
     

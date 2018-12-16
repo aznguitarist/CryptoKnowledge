@@ -28,6 +28,7 @@
 		D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */; };
 		D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */; };
 		D46AE63321BA2BF6001A3EC4 /* CardanoBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */; };
+		D471A2DB21BF81B500B1E0B8 /* MarketCapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */; };
 		D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD552177D4F10056D396 /* AppDelegate.swift */; };
 		D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD592177D4F10056D396 /* Main.storyboard */; };
 		D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 		D4B4A7BB218909AA007BF00A /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4A7BA218909AA007BF00A /* RealmData.swift */; };
 		D4C6E23421876E73002A3564 /* CryptoChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */; };
 		D4C6E23621876F1E002A3564 /* CryptoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */; };
+		D4E6AADF21BF467B0042D4F4 /* ExchangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6AADE21BF467B0042D4F4 /* ExchangesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,7 @@
 		D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardanoBank.swift; sourceTree = "<group>"; };
+		D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCapViewController.swift; sourceTree = "<group>"; };
 		D471BD522177D4F10056D396 /* CryptoKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471BD552177D4F10056D396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D471BD5A2177D4F10056D396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		D4B4A7BA218909AA007BF00A /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
 		D4C6E23321876E73002A3564 /* CryptoChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoChoiceViewController.swift; sourceTree = "<group>"; };
 		D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellTableViewCell.swift; sourceTree = "<group>"; };
+		D4E6AADE21BF467B0042D4F4 /* ExchangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,8 @@
 				D4415BE021B61E85009CB803 /* EOSViewController.swift */,
 				D447679B21B82E2A004F4598 /* DashViewController.swift */,
 				D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */,
+				D4E6AADE21BF467B0042D4F4 /* ExchangesViewController.swift */,
+				D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */,
 				D49EF1C521B3294700AE8749 /* LedgerWalletViewController.swift */,
 			);
 			path = Controllers;
@@ -369,6 +375,7 @@
 				D41A799A217E4CEA003F073A /* RegistrationViewController.swift in Sources */,
 				D43A423A2183750E00B16B20 /* GradientBackground.swift in Sources */,
 				D44C9BF7218774C600B4A025 /* CoinList.swift in Sources */,
+				D471A2DB21BF81B500B1E0B8 /* MarketCapViewController.swift in Sources */,
 				D41D4FCC21B06D0200776D5E /* animations.swift in Sources */,
 				D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */,
 				D439297621925A64004C3B6A /* User.swift in Sources */,
@@ -400,6 +407,7 @@
 				D4415BE121B61E85009CB803 /* EOSViewController.swift in Sources */,
 				D447677921B81D72004F4598 /* DashBank.swift in Sources */,
 				D49C3E90219B6CD000A56DB8 /* RippleBank.swift in Sources */,
+				D4E6AADF21BF467B0042D4F4 /* ExchangesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
