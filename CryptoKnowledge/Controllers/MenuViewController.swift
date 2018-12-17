@@ -93,11 +93,13 @@ class MenuViewController: UIViewController{
         print()
     }
 
-    @IBAction func exchangesTwoTapped(_ sender: Any) {
+    @IBAction func exchangesTwoTapped(_ sender: AnyObject) {
         
-        let exchangesVc = ExchangesViewController()
-        present(exchangesVc, animated:  true, completion:  nil)
-        print("Is this a good one?" )
+        performSegue(withIdentifier: "toMarket", sender: self)
+      
+//        let exchangesVc = MarketViewController()
+//        present(exchangesVc, animated:  true, completion:  nil)
+//        print("Market")
     }
     
     

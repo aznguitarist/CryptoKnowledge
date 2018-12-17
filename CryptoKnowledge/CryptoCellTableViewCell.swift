@@ -25,10 +25,10 @@ class CryptoCellTableViewCell: UITableViewCell {
     }
     
     
-    
-    func fetchFireUserData(){
-        let ref = FIRDatabase.database().reference()
-        guard let uid = FIRAuth.auth()?.currentUser!.uid else {
-            return}
-        }
+//    
+//    func fetchFireUserData(){
+//        let ref = FIRDatabase.database().reference()
+//        guard let uid = FIRAuth.auth()?.currentUser!.uid else {
+//            return}
+//        }
         }

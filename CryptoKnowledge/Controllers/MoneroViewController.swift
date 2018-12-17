@@ -14,6 +14,7 @@ import AVFoundation
 
 class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
 
+    
     let moneroQuestions = MoneroBank()
     var questionNumber = 0
     var score = 0
@@ -22,6 +23,7 @@ class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
     var player = AVAudioPlayer()
     var wrongNoise = AVAudioPlayer()
     
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var choiceOne: UIButton!
     @IBOutlet weak var choiceTwo: UIButton!
@@ -100,7 +102,7 @@ class MoneroViewController: UIViewController,AVAudioPlayerDelegate {
         gradient.startPoint = CGPoint(x: 0.0, y: 0.1)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradient.cornerRadius = 10
-        view.layer.insertSublayer(gradient, at: 1)
+        mainStackView.layer.insertSublayer(gradient, at: 0)
         
         let firstGradientImage1 = UIImage.gradientImage1(with: choiceOne.frame, colors: [UIColor.black.cgColor, UIColor.lightGray.cgColor,UIColor.black.cgColor], locations: [0.66, 0.33])
         choiceOne.setBackgroundImage(firstGradientImage1, for: .normal)

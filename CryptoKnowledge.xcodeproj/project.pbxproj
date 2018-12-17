@@ -27,8 +27,9 @@
 		D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1CE217994A2006E1D64 /* LogInViewController.swift */; };
 		D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */; };
 		D45DA1D3217A2BAE006E1D64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */; };
+		D4672B6621C6E84200E582A9 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4672B6521C6E84200E582A9 /* MarketViewController.swift */; };
+		D4672B6821C701AA00E582A9 /* MarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4672B6721C701AA00E582A9 /* MarketTableViewCell.swift */; };
 		D46AE63321BA2BF6001A3EC4 /* CardanoBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */; };
-		D471A2DB21BF81B500B1E0B8 /* MarketCapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */; };
 		D471BD562177D4F10056D396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD552177D4F10056D396 /* AppDelegate.swift */; };
 		D471BD5B2177D4F10056D396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D471BD592177D4F10056D396 /* Main.storyboard */; };
 		D471BD5E2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D471BD5C2177D4F10056D396 /* CryptoKnowledge.xcdatamodeld */; };
@@ -81,8 +82,9 @@
 		D45DA1CE217994A2006E1D64 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D45DA1D0217A13A2006E1D64 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		D45DA1D2217A2BAE006E1D64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4672B6521C6E84200E582A9 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		D4672B6721C701AA00E582A9 /* MarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewCell.swift; sourceTree = "<group>"; };
 		D46AE63221BA2BF6001A3EC4 /* CardanoBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardanoBank.swift; sourceTree = "<group>"; };
-		D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCapViewController.swift; sourceTree = "<group>"; };
 		D471BD522177D4F10056D396 /* CryptoKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471BD552177D4F10056D396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D471BD5A2177D4F10056D396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				D471BD702177FFA60056D396 /* Controllers */,
 				D471BD592177D4F10056D396 /* Main.storyboard */,
 				D4C6E23521876F1E002A3564 /* CryptoCellTableViewCell.swift */,
+				D4672B6721C701AA00E582A9 /* MarketTableViewCell.swift */,
 				D4B4A7BA218909AA007BF00A /* RealmData.swift */,
 				D44C9BF6218774C600B4A025 /* CoinList.swift */,
 				D43A423B218377CC00B16B20 /* constants.swift */,
@@ -210,8 +213,8 @@
 				D447679B21B82E2A004F4598 /* DashViewController.swift */,
 				D49EF1C321B30CC600AE8749 /* WalletsViewController.swift */,
 				D4E6AADE21BF467B0042D4F4 /* ExchangesViewController.swift */,
-				D471A2DA21BF81B500B1E0B8 /* MarketCapViewController.swift */,
 				D49EF1C521B3294700AE8749 /* LedgerWalletViewController.swift */,
+				D4672B6521C6E84200E582A9 /* MarketViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,10 +375,11 @@
 				D43A423621836D4600B16B20 /* CryptoQuestionBank.swift in Sources */,
 				D45DA1D1217A13A2006E1D64 /* MainNavigationController.swift in Sources */,
 				D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */,
+				D4672B6821C701AA00E582A9 /* MarketTableViewCell.swift in Sources */,
 				D41A799A217E4CEA003F073A /* RegistrationViewController.swift in Sources */,
+				D4672B6621C6E84200E582A9 /* MarketViewController.swift in Sources */,
 				D43A423A2183750E00B16B20 /* GradientBackground.swift in Sources */,
 				D44C9BF7218774C600B4A025 /* CoinList.swift in Sources */,
-				D471A2DB21BF81B500B1E0B8 /* MarketCapViewController.swift in Sources */,
 				D41D4FCC21B06D0200776D5E /* animations.swift in Sources */,
 				D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */,
 				D439297621925A64004C3B6A /* User.swift in Sources */,
