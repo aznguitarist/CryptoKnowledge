@@ -40,6 +40,7 @@
 		D471BD6F2177F9280056D396 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD6E2177F9280056D396 /* Questions.swift */; };
 		D471BD72217800140056D396 /* BitcoinBank .swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD71217800140056D396 /* BitcoinBank .swift */; };
 		D471BD7421792DD80056D396 /* ethereumQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */; };
+		D47BB9C021C9A79800925335 /* ImageCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BB9BF21C9A79800925335 /* ImageCacheLoader.swift */; };
 		D48986D721AED36900FC8FB5 /* MoneroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48986D621AED36900FC8FB5 /* MoneroViewController.swift */; };
 		D48986D921AEE43100FC8FB5 /* MoneroBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48986D821AEE43100FC8FB5 /* MoneroBank.swift */; };
 		D49C3E86219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D49C3E85219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 */; };
@@ -97,6 +98,7 @@
 		D471BD6E2177F9280056D396 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		D471BD71217800140056D396 /* BitcoinBank .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BitcoinBank .swift"; sourceTree = "<group>"; };
 		D471BD7321792DD80056D396 /* ethereumQuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ethereumQuestionBank.swift; sourceTree = "<group>"; };
+		D47BB9BF21C9A79800925335 /* ImageCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheLoader.swift; sourceTree = "<group>"; };
 		D48986D621AED36900FC8FB5 /* MoneroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneroViewController.swift; sourceTree = "<group>"; };
 		D48986D821AEE43100FC8FB5 /* MoneroBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneroBank.swift; sourceTree = "<group>"; };
 		D49C3E85219B5D2C00A56DB8 /* Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lobo_Loco_-_04_-_Master_Thief_ID_1012.mp3"; sourceTree = SOURCE_ROOT; };
@@ -215,6 +217,7 @@
 				D4E6AADE21BF467B0042D4F4 /* ExchangesViewController.swift */,
 				D49EF1C521B3294700AE8749 /* LedgerWalletViewController.swift */,
 				D4672B6521C6E84200E582A9 /* MarketViewController.swift */,
+				D47BB9BF21C9A79800925335 /* ImageCacheLoader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D43A423A2183750E00B16B20 /* GradientBackground.swift in Sources */,
 				D44C9BF7218774C600B4A025 /* CoinList.swift in Sources */,
 				D41D4FCC21B06D0200776D5E /* animations.swift in Sources */,
+				D47BB9C021C9A79800925335 /* ImageCacheLoader.swift in Sources */,
 				D45DA1CF217994A2006E1D64 /* LogInViewController.swift in Sources */,
 				D439297621925A64004C3B6A /* User.swift in Sources */,
 				D4415BE321B7682E009CB803 /* EOSBank.swift in Sources */,

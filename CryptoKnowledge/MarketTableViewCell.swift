@@ -15,6 +15,9 @@ class MarketTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var athLabel: UILabel!
+    
+    @IBOutlet weak var rankLabel: UILabel!
+    
     @IBOutlet weak var currentPrice: UILabel!
     @IBOutlet weak var dayChangeLabel: UILabel!
     @IBOutlet weak var linkButton: UIButton!

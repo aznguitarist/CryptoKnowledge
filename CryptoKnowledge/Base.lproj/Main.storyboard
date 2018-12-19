@@ -1062,22 +1062,27 @@
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-FR-4Jt">
                                                                     <rect key="frame" x="0.0" y="0.0" width="172.5" height="73"/>
-                                                                    <color key="backgroundColor" red="0.96031600240000003" green="0.77101373669999995" blue="0.26255661250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="VWJ-LX-hT4">
                                                                     <rect key="frame" x="0.0" y="78" width="172.5" height="72.5"/>
                                                                     <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKn-P7-Rrg">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="22.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rWL-w5-8ud">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="24.5" width="172.5" height="23"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" distribution="fillEqually" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wT1-SF-bZC" userLabel="LeftBottomStack View">
-                                                                            <rect key="frame" x="0.0" y="37" width="172.5" height="35.5"/>
+                                                                            <rect key="frame" x="0.0" y="49.5" width="172.5" height="23"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbc-xi-CCC">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="86.5" height="35.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="86.5" height="23"/>
                                                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                                     <nil key="textColor"/>
@@ -1085,7 +1090,7 @@
                                                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="Symbol " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="70" translatesAutoresizingMaskIntoConstraints="NO" id="gXk-FX-3Ew">
-                                                                                    <rect key="frame" x="86.5" y="0.0" width="86" height="35.5"/>
+                                                                                    <rect key="frame" x="86.5" y="0.0" width="86" height="23"/>
                                                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                                     <color key="tintColor" red="0.079096847329999997" green="0.80942655460000001" blue="0.63164695569999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -1151,6 +1156,7 @@
                                             <outlet property="linkButton" destination="EZ2-8A-yvk" id="rYZ-0a-wGo"/>
                                             <outlet property="logoImageView" destination="KWG-FR-4Jt" id="WuF-vH-XcB"/>
                                             <outlet property="nameLabel" destination="bbc-xi-CCC" id="GSc-62-S51"/>
+                                            <outlet property="rankLabel" destination="UKn-P7-Rrg" id="yEF-KB-fuW"/>
                                             <outlet property="symbolLabel" destination="gXk-FX-3Ew" id="YUW-em-dm0"/>
                                         </connections>
                                     </tableViewCell>
