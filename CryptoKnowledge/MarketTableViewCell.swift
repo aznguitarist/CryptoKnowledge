@@ -16,7 +16,10 @@ class MarketTableViewCell: UITableViewCell {
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var athLabel: UILabel!
     
-    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var percentChangeLabel: UILabel!
+    
+    
+    @IBOutlet weak var marketCapLabel: UILabel!
     
     @IBOutlet weak var currentPrice: UILabel!
     @IBOutlet weak var dayChangeLabel: UILabel!
@@ -27,7 +30,10 @@ class MarketTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       logoImageView.layer.borderColor = UIColor.black.cgColor
+        logoImageView.layer.borderWidth = 2
+        logoImageView.layer.cornerRadius = 10
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
