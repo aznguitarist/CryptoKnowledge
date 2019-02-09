@@ -50,8 +50,14 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addCoin))
+        self.title = "Market"
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -68,6 +74,7 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        tableView.reloadData()
+        navigationController?.title = "Market"
     }
     
     func sortCoins() {
@@ -177,8 +184,7 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100}
     
-    public func createCoinArray()
-    {
+    public func createCoinArray() {
         for coin in listOfCoins{
             let requestURL = URL(string: coin)
             let request = URLRequest(url: requestURL!)
@@ -190,7 +196,6 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     do {
                         let json = try JSONDecoder().decode([CoinData].self, from: data!)
                        self.coinData.append(json[0])
-                    
                         DispatchQueue.main.async {
                           self.sortCoins()
                             self.tableView.reloadData()
@@ -204,6 +209,12 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
         requestTask.resume()
     }
     
+    }
+    
+    @objc func addCoin(){
+//        let addCoin = AddCoinToMarketViewController()
+//        present(addCoin, animated: true, completion: nil)
+        performSegue(withIdentifier: "AddCoin", sender: self)
     }
     
 }

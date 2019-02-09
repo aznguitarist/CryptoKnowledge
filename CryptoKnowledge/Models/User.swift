@@ -27,7 +27,7 @@ class User: NSObject{
             if let val = snap.value as? [String: Any]{
                 let number = val["Question Number"] as? Int
                 self.cryptoquizQN = number 
-                print(self.cryptoquizQN)
+
             }
         }
     }

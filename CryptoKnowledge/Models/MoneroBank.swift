@@ -17,7 +17,7 @@ class MoneroBank {
             MoneroBank.append(Questions(quest: "When was Monero created?", c1: "April 2014", c2: "May 2014", c3: "June 2014", ans: 1))
             MoneroBank.append(Questions(quest: "What does Monero focus on?", c1: "Fungibility, Privacy, and Decentralization ", c2: "Acting as a stable coin", c3: "Being a way of frictionless transactions", ans: 1))
             MoneroBank.append(Questions(quest: "What does 'monero' mean in Esperanto", c1: "Money", c2: "Coin", c3: "Currency", ans: 2))
-            MoneroBank.append(Questions(quest: "How often is a new block created?", c1: "2 Minuntes", c2: "5 Minutes", c3: "10 Minutes", ans: 1))
+            MoneroBank.append(Questions(quest: "How often is a new block created?", c1: "2 Minutes", c2: "5 Minutes", c3: "10 Minutes", ans: 1))
             
             MoneroBank.append(Questions(quest: "Who created Monero?", c1: "A core 7 developers", c2: "A Satoshi Nakamoto and Justin Ver", c3: "Chinese Government", ans: 1))
             MoneroBank.append(Questions(quest: "What kind of crypto-currency is Monero considered?", c1: "Stable Coin", c2: "Commodity Coin", c3: "Private Coin", ans: 3))
