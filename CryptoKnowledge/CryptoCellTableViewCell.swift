@@ -15,23 +15,20 @@ class CryptoCellTableViewCell: UITableViewCell {
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
     
+    
+    
     func setCoin(coin: Coins){
         coinImageView.image = coin.image
         coinLabel.text = coin.name
         progressLabel.text = coin.progress
+        progressLabel.font = progressLabel.font.withSize(15.0)
     }
     
-    func fetchFireUserData(){
-        let ref = FIRDatabase.database().reference()
-        guard let uid = FIRAuth.auth()?.currentUser!.uid else {
-            return
-        }
-        
-        
-        
-        
-        }
-        
-
     
-}
+//    
+//    func fetchFireUserData(){
+//        let ref = FIRDatabase.database().reference()
+//        guard let uid = FIRAuth.auth()?.currentUser!.uid else {
+//            return}
+//        }
+        }

@@ -10,29 +10,50 @@ import Foundation
 import UIKit
 import Firebase
 import SVProgressHUD
+import AVFoundation
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerDelegate {
+    
+    var player = AVAudioPlayer()
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userNameTextField.placeholder = "Username"
+//        logInButton.setGradientBack(oneColor: Colors.iconDarkBlue, twoColor: Colors.iconDarkPurple)
+       
+        
+        do {
+            let audioPlayer = Bundle.main.url(forResource: "Dee_Yan-Key_-_06_-_Sweet_Silence", withExtension: "mp3")
+            player = try AVAudioPlayer(contentsOf: audioPlayer!)
+        } catch {
+            print("Error")
+        }
+        view.setGradientBackground(oneColor: Colors.iconDarkBlue, twoColor: UIColor.black)
+        player.play()
+        
+         userNameTextField.placeholder = "Username"
         passwordTextField.placeholder = "Password"
         
         self.userNameTextField.delegate = self
         self.passwordTextField.delegate = self
+        
+        let userDefaultDict = UserDefaults.standard.dictionaryRepresentation()
+        
+        print(userDefaultDict)
    
+        for (key, value) in userDefaultDict {
+            print("\(key) = \(value) \n")
+        }
     }
+    
     @IBAction func registerTapped(_ sender: Any) {
         navigateToRegistration()
-        
     }
     
     @IBAction func logInPressed(_ sender: Any) {
@@ -44,10 +65,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if error != nil {
                 print(error!)
                 SVProgressHUD.dismiss()
-                let alert = UIAlertView(title: "Invalid", message: "Try again", delegate: self, cancelButtonTitle: "Ok")
-                alert.show()
+                let alert = UIAlertController(title: "Invalid", message: "Try again", preferredStyle: UIAlertController.Style.alert)
+                let menuVC = MenuViewController()
+                alert.show(menuVC, sender: self)
 
             }else{
+                self.logInButton.flash()
                 SVProgressHUD.dismiss()
                 print("Login Successfull")
                 self.navigateToChoice()
@@ -56,22 +79,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+//    private func navigateToChoice () {
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//        guard let mainNavigationVC = mainStoryboard.instantiateViewController(withIdentifier: "Menu") as? MainNavigationController else {
+//            return
+//        }
+//        present(mainNavigationVC, animated: true, completion: nil)
+//    }
+
     private func navigateToChoice () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-        guard let mainNavigationVC = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? MainNavigationController else {
-            return
-        }
-        present(mainNavigationVC, animated: true, completion: nil)
+        
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "FirstMainNavigationController")
+        present(mainRegistrationVC, animated: true, completion: nil)
     }
-
     
     private func navigateToRegistration () {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        guard let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Registration") as? UIViewController else {
-            return
-        }
+        let mainRegistrationVC = mainStoryboard.instantiateViewController(withIdentifier: "Registration") 
         present(mainRegistrationVC, animated: true, completion: nil)
     }
     

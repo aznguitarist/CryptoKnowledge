@@ -26,8 +26,8 @@ class User: NSObject{
         FIRDatabase.database().reference().child("Users").child(uid!).child("Cryptoquiz").observeSingleEvent(of: .value) { (snap) in
             if let val = snap.value as? [String: Any]{
                 let number = val["Question Number"] as? Int
-                self.cryptoquizQN = number as! Int
-                print(self.cryptoquizQN)
+                self.cryptoquizQN = number 
+
             }
         }
     }
